@@ -30,16 +30,18 @@
 
 ## Projects
 
-| Repository | Language |
+| Repository | Total Projects |
 |---|---|
-| [Machine-Learning](https://github.com/BadrKandri/Machine-Learning) | Jupyter Notebook |
-| [PortNet-Predictive-Modeling](https://github.com/BadrKandri/PortNet-Predictive-Modeling) | Jupyter Notebook |
-| [Sofac-commercial-agent](https://github.com/BadrKandri/Sofac-commercial-agent) | Jupyter Notebook |
-| [PeaQock_Manus](https://github.com/BadrKandri/PeaQock_Manus) | Python |
+| [PortNet-Predictive-Modeling](https://github.com/BadrKandri/PortNet-Predictive-Modeling) | Machine-Learning |
+| [Sofac-commercial-agent](https://github.com/BadrKandri/Sofac-commercial-agent) | AI Engineering  |
+| [Deep-Learning](https://github.com/BadrKandri/Deep-Learning) | 5 |
+| [Machine-Learning](https://github.com/BadrKandri/Machine-Learning) | 6 |
+| [PeaQock_Manus](https://github.com/BadrKandri/PeaQock_Manus) | AI Engineering  |
+| [Python](https://github.com/BadrKandri/100-Days-Of-Code-PYTHON) | 40 |
 
 ---
 
-## HackerRank progress (updates automatically)
+## HackerRank progress
 
 <p align="center">
   <a href="https://www.hackerrank.com/profile/badr_kandri_10">
