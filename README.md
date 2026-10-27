@@ -45,7 +45,7 @@
 
 <p align="center">
   <a href="https://www.hackerrank.com/profile/badr_kandri_10">
-    <img src="assets/hackerrank-card.svg" alt="My HackerRank progress" width="600" />
+    <img src="assets/hackerrank-dashboard.svg" alt="My HackerRank progress" width="600" />
   </a>
 </p>
 

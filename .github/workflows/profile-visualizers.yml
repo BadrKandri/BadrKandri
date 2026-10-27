@@ -25,15 +25,16 @@ jobs:
       - name: Generate HackerRank card
         env:
           HACKERRANK_USERNAME: "badr_kandri_10"
-          OUTPUT_PATH: "assets/hackerrank-card.svg"
+          OUTPUT_PATH: "assets/hackerrank-dashboard.svg"
         run: |
           python .github/scripts/generate_hackerrank_card.py
+          cp assets/hackerrank-dashboard.svg assets/hackerrank-card.svg
 
       - name: Commit generated card
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/hackerrank-card.svg
+          git add assets/hackerrank-dashboard.svg assets/hackerrank-card.svg
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
