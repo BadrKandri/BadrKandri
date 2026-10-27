@@ -73,14 +73,30 @@
 
 ### 📂 Featured Projects
 
-| Project | Domain | Tech Stack | Highlights |
-|---|---|---|---|
-| [**meliodas_manus**](https://github.com/BadrKandri/meliodas_manus) | AI Engineering | `Python` `GPT-4V` `Vision AI` | Multimodal AI Agent analyzing Excel sheets, extracting visual charts, and generating automated PDF reports. |
-| [**PortNet-Predictive-Modeling**](https://github.com/BadrKandri/PortNet-Predictive-Modeling) | Machine Learning | `Python` `NumPy` `Jupyter` | Predictive analytics and feature engineering for logistics and port operations modeling. |
-| [**Sofac-commercial-agent**](https://github.com/BadrKandri/Sofac-commercial-agent) | AI Agent | `Python` `LLM` `Automation` | Commercial intelligent agent for customer interactions and process optimization. |
-| [**Deep-Learning**](https://github.com/BadrKandri/Deep-Learning) | Deep Learning | `Python` `Neural Nets` `NLP` | Neural network architectures, backprop implementations, and modern NLP experiments. |
-| [**Machine-Learning**](https://github.com/BadrKandri/Machine-Learning) | Algorithms | `Python` `NumPy` `Scratch` | Foundational machine learning algorithms coded from ground zero using pure vector mathematics. |
-| [**100-Days-Of-Code-PYTHON**](https://github.com/BadrKandri/100-Days-Of-Code-PYTHON) | Python | `Python` `40+ Projects` | Comprehensive codebase covering Python mastery, OOP, algorithms, and application building. |
+<p align="center">
+  <a href="https://github.com/BadrKandri/meliodas_manus">
+    <img src="assets/projects/meliodas_manus.svg" width="295" alt="meliodas_manus" />
+  </a>
+  <a href="https://github.com/BadrKandri/PortNet-Predictive-Modeling">
+    <img src="assets/projects/portnet.svg" width="295" alt="PortNet-Predictive-Modeling" />
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/BadrKandri/Sofac-commercial-agent">
+    <img src="assets/projects/sofac.svg" width="295" alt="Sofac-commercial-agent" />
+  </a>
+  <a href="https://github.com/BadrKandri/Deep-Learning">
+    <img src="assets/projects/deep_learning.svg" width="295" alt="Deep-Learning" />
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/BadrKandri/Machine-Learning">
+    <img src="assets/projects/machine_learning.svg" width="295" alt="Machine-Learning" />
+  </a>
+  <a href="https://github.com/BadrKandri/100-Days-Of-Code-PYTHON">
+    <img src="assets/projects/python_100.svg" width="295" alt="100-Days-Of-Code-PYTHON" />
+  </a>
+</p>
 
 ---
 
