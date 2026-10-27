@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.hackerrank.com/profile/YOUR_HACKERRANK_USERNAME"><img src="https://img.shields.io/badge/HackerRank-00EA64?style=for-the-badge&logo=hackerrank&logoColor=black" alt="HackerRank" /></a>
+  <a href="https://www.hackerrank.com/profile/badr_kandri_10"><img src="https://img.shields.io/badge/HackerRank-00EA64?style=for-the-badge&logo=hackerrank&logoColor=black" alt="HackerRank" /></a>
   <a href="https://github.com/BadrKandri"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
 </p>
 
@@ -42,7 +42,7 @@
 ## HackerRank progress (updates automatically)
 
 <p align="center">
-  <a href="https://www.hackerrank.com/profile/YOUR_HACKERRANK_USERNAME">
+  <a href="https://www.hackerrank.com/profile/badr_kandri_10">
     <img src="assets/hackerrank-card.svg" alt="My HackerRank progress" width="600" />
   </a>
 </p>
