@@ -11,9 +11,11 @@
     <a href="https://www.hackerrank.com/profile/badr_kandri_10">
       <img src="https://img.shields.io/badge/HackerRank-badr__kandri__10-00EA64?style=for-the-badge&logo=hackerrank&logoColor=black" alt="HackerRank" />
     </a>
+    <br/>
     <a href="https://github.com/BadrKandri">
       <img src="https://img.shields.io/badge/GitHub-BadrKandri-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
     </a>
+    <br/>
     <a href="mailto:badr.kandri.10@gmail.com">
       <img src="https://img.shields.io/badge/Email-Get%20in%20Touch-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
     </a>
