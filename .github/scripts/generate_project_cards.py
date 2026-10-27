@@ -7,7 +7,7 @@ projects = [
         "domain": "AI Engineering",
         "domain_color": "#00EA64",
         "desc_line1": "Multimodal AI Agent using GPT-4 Vision to",
-        "desc_line2": "analyze Excel files & generate PDF reports.",
+        "desc_line2": "analyze Excel files &amp; generate PDF reports.",
         "tags": ["Python", "GPT-4V", "Vision AI"]
     },
     {
@@ -15,7 +15,7 @@ projects = [
         "title": "PortNet-Predictive-Modeling",
         "domain": "Machine Learning",
         "domain_color": "#38BDF8",
-        "desc_line1": "Predictive analytics & feature engineering for",
+        "desc_line1": "Predictive analytics &amp; feature engineering for",
         "desc_line2": "maritime logistics and port operations.",
         "tags": ["Python", "NumPy", "Jupyter"]
     },
@@ -71,7 +71,6 @@ def render_project_card(p):
     tag_x = 16
     tag_svgs = []
     for tag in p["tags"]:
-        # approximate tag width
         tag_w = len(tag) * 6.5 + 14
         tag_svgs.append(f'''
         <g transform="translate({tag_x}, 104)">
@@ -157,13 +156,19 @@ def render_project_card(p):
 '''
     return svg
 
-out_dir = "C:/Users/MELIODAS/.gemini/antigravity/scratch/BadrKandri/assets/projects"
-os.makedirs(out_dir, exist_ok=True)
+def main():
+    target_dirs = [
+        "C:/Users/MELIODAS/.gemini/antigravity/scratch/BadrKandri/assets/projects"
+    ]
+    for out_dir in target_dirs:
+        os.makedirs(out_dir, exist_ok=True)
+        for p in projects:
+            svg_code = render_project_card(p)
+            file_path = os.path.join(out_dir, f"{p['id']}.svg")
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write(svg_code)
 
-for p in projects:
-    svg_code = render_project_card(p)
-    file_path = os.path.join(out_dir, f"{p['id']}.svg")
-    with open(file_path, "w", encoding="utf-8") as f:
-        f.write(svg_code)
+    print("Regenerated all project cards with valid XML entities successfully!")
 
-print("Generated all 6 project cards successfully!")
+if __name__ == "__main__":
+    main()

@@ -57,7 +57,7 @@
   <!-- Description (2 lines) -->
   <g transform="translate(16, 68)">
     <text x="0" y="0" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="400">
-      Predictive analytics & feature engineering for
+      Predictive analytics &amp; feature engineering for
     </text>
     <text x="0" y="15" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="400">
       maritime logistics and port operations.

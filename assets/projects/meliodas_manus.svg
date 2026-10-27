@@ -60,7 +60,7 @@
       Multimodal AI Agent using GPT-4 Vision to
     </text>
     <text x="0" y="15" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="400">
-      analyze Excel files & generate PDF reports.
+      analyze Excel files &amp; generate PDF reports.
     </text>
   </g>
 

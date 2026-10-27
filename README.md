@@ -75,10 +75,10 @@
 
 <p align="center">
   <a href="https://github.com/BadrKandri/meliodas_manus">
-    <img src="assets/projects/meliodas_manus.svg" width="295" alt="meliodas_manus" />
+    <img src="assets/projects/card_meliodas_manus.svg" width="295" alt="meliodas_manus" />
   </a>
   <a href="https://github.com/BadrKandri/PortNet-Predictive-Modeling">
-    <img src="assets/projects/portnet.svg" width="295" alt="PortNet-Predictive-Modeling" />
+    <img src="assets/projects/card_portnet.svg" width="295" alt="PortNet-Predictive-Modeling" />
   </a>
 </p>
 <p align="center">
