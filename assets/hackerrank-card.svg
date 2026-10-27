@@ -1,50 +1,182 @@
-<svg width="467" height="195" viewBox="0 0 467 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="600" height="322" viewBox="0 0 600 322" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17" />
+      <stop offset="45%" stop-color="#0E1422" />
+      <stop offset="100%" stop-color="#121826" />
+    </linearGradient>
+
+    <!-- Outer Border Gradient -->
+    <linearGradient id="card-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00EA64" stop-opacity="0.45" />
+      <stop offset="30%" stop-color="#22C55E" stop-opacity="0.2" />
+      <stop offset="70%" stop-color="#38BDF8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.06" />
+    </linearGradient>
+
+    <!-- Stat Box Background -->
+    <linearGradient id="stat-box-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#161F2E" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0F1622" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Gold Star Gradient -->
+    <linearGradient id="gold-star-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+
+    <!-- Star Glow Filter -->
+    <filter id="star-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#F59E0B" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Dynamic Color Filters -->
+    <filter id="glow-00EA64" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#00EA64" flood-opacity="0.45"/>
+    </filter>
+    <filter id="glow-38BDF8" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#38BDF8" flood-opacity="0.45"/>
+    </filter>
+    <filter id="glow-F59E0B" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#F59E0B" flood-opacity="0.45"/>
+    </filter>
+    <filter id="glow-EC4899" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#EC4899" flood-opacity="0.45"/>
+    </filter>
+    <filter id="glow-A855F7" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#A855F7" flood-opacity="0.45"/>
+    </filter>
+    <filter id="glow-F97316" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#F97316" flood-opacity="0.45"/>
+    </filter>
+    <filter id="glow-06B6D4" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#06B6D4" flood-opacity="0.45"/>
+    </filter>
+    <filter id="glow-EAB308" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#EAB308" flood-opacity="0.45"/>
+    </filter>
+    <filter id="glow-64748B" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#64748B" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
   <style>
-    .stat-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #0f172a; }
-    .stat-val { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 700; }
-    .star-val { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 2px; }
+    .font-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif; font-size: 17px; font-weight: 700; fill: #FFFFFF; letter-spacing: -0.2px; }
+    .font-sub { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif; font-size: 12px; font-weight: 400; fill: #94A3B8; }
+    .font-stat-num { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif; font-size: 25px; font-weight: 800; fill: #FFFFFF; letter-spacing: -0.5px; }
+    .font-stat-lbl { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #94A3B8; letter-spacing: 0.2px; }
+    .font-sec-hdr { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif; font-size: 10px; font-weight: 700; fill: #64748B; letter-spacing: 1.2px; }
   </style>
-  <rect x="0.5" y="0.5" width="466" height="194" rx="8" fill="#ffffff" stroke="#99f6e4" stroke-width="1.5" />
 
-  <!-- Header -->
-  <g transform="translate(24, 30)">
-    <text fill="#00ea64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700">
-      🎖️ HackerRank Achievements • @badr_kandri_10
+  <!-- Main Card Container -->
+  <rect x="1" y="1" width="598" height="320" rx="16" fill="url(#bg-grad)" stroke="url(#card-border)" stroke-width="1.5" />
+
+  <!-- Ambient Glow top left -->
+  <ellipse cx="65" cy="55" rx="100" ry="75" fill="#00EA64" opacity="0.07" />
+
+  <!-- HEADER -->
+  <g transform="translate(24, 22)">
+    <!-- HackerRank Official Logo Mark -->
+    <g transform="translate(0, 2)">
+      <rect x="0" y="0" width="34" height="34" rx="9" fill="#00EA64" />
+      <path d="M10 8.5H13.2V14.3H20.8V8.5H24V25.5H20.8V17.5H13.2V25.5H10V8.5Z" fill="#09141E" />
+    </g>
+
+    <!-- Platform Name & User Info -->
+    <text x="44" y="18" class="font-title">HackerRank</text>
+    <text x="44" y="34" class="font-sub">
+      <tspan fill="#38BDF8" font-weight="600">@badr_kandri_10</tspan>
+      <tspan fill="#475569"> • </tspan>
+      <tspan fill="#94A3B8">Morocco</tspan>
     </text>
-    <text x="419" y="0" text-anchor="end" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">
-      Level 5 • Morocco
-    </text>
+
+    <!-- Level Pill (Top Right) -->
+    <g transform="translate(464, 5)">
+      <rect x="0" y="0" width="88" height="27" rx="13.5" fill="rgba(0, 234, 100, 0.12)" stroke="rgba(0, 234, 100, 0.35)" stroke-width="1"/>
+      <circle cx="15" cy="13.5" r="3.5" fill="#00EA64" filter="url(#glow-00EA64)"/>
+      <text x="25" y="17.5" fill="#00EA64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="0.5px">
+        LEVEL 5
+      </text>
+    </g>
   </g>
 
-  <!-- Badges / Stars -->
-  <g transform="translate(24, 56)">
+  <!-- 3 HERO STAT BOXES -->
+  <g transform="translate(24, 76)">
+    <!-- Box 1: Challenges Solved -->
     <g transform="translate(0, 0)">
-      <text class="stat-label">Python:</text>
-      <text x="220" class="star-val" fill="#ffa116">★☆☆☆☆☆</text>
+      <rect x="0" y="0" width="176" height="74" rx="12" fill="url(#stat-box-bg)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+      <circle cx="28" cy="27" r="13" fill="rgba(0, 234, 100, 0.12)"/>
+      <!-- Checkmark / target icon -->
+      <path d="M23 27L26.5 30.5L33 24" stroke="#00EA64" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="49" y="34" class="font-stat-num">1</text>
+      <text x="16" y="58" class="font-stat-lbl">Challenges solved</text>
     </g>
-    <g transform="translate(0, 26)">
-      <text class="stat-label">Primary Track:</text>
-      <text x="220" class="stat-val" fill="#00ea64">Problem Solving (Algorithms)</text>
+
+    <!-- Box 2: Stars Earned -->
+    <g transform="translate(188, 0)">
+      <rect x="0" y="0" width="176" height="74" rx="12" fill="url(#stat-box-bg)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+      <circle cx="28" cy="27" r="13" fill="rgba(245, 158, 11, 0.14)"/>
+      <!-- Star icon -->
+      <polygon points="28,20 29.8,24 34.2,24.4 30.8,27.3 31.8,31.6 28,29.3 24.2,31.6 25.2,27.3 21.8,24.4 26.2,24" fill="#F59E0B"/>
+      <text x="49" y="34" class="font-stat-num">1</text>
+      <text x="16" y="58" class="font-stat-lbl">Stars earned</text>
     </g>
-    <g transform="translate(0, 52)">
-      <text class="stat-label">Challenges Solved:</text>
-      <text x="220" class="stat-val" fill="#00d26a">1 challenges</text>
-    </g>
-    <g transform="translate(0, 78)">
-      <text class="stat-label">Profile Standing:</text>
-      <text x="220" class="stat-val" fill="#64748b">Active Candidate (Lvl 5)</text>
+
+    <!-- Box 3: Badges -->
+    <g transform="translate(376, 0)">
+      <rect x="0" y="0" width="176" height="74" rx="12" fill="url(#stat-box-bg)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+      <circle cx="28" cy="27" r="13" fill="rgba(56, 189, 248, 0.14)"/>
+      <!-- Trophy icon -->
+      <path d="M24 21.5H32V25.5C32 27.7 30.2 29.5 28 29.5C25.8 29.5 24 27.7 24 25.5V21.5Z" stroke="#38BDF8" stroke-width="1.8" fill="none"/>
+      <path d="M28 29.5V32.5M25 32.5H31" stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="49" y="34" class="font-stat-num">1</text>
+      <text x="16" y="58" class="font-stat-lbl">Badges unlocked</text>
     </g>
   </g>
 
-  <!-- Summary Footer Line -->
+  <!-- BADGES SECTION HEADER -->
   <g transform="translate(24, 168)">
-    <text fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">
-      Total Solved: <tspan fill="#00ea64" font-weight="700">1</tspan> • Earned Stars: <tspan fill="#ffa116" font-weight="700">0★</tspan>
+    <line x1="0" y1="0" x2="552" y2="0" stroke="rgba(255, 255, 255, 0.07)" stroke-width="1" />
+    <text x="0" y="18" class="font-sec-hdr">BADGES &amp; SKILLS</text>
+  </g>
+
+  <!-- BADGES LIST -->
+  
+            <g transform="translate(24, 222)">
+                <!-- Row background -->
+                <rect x="0" y="0" width="552" height="34" rx="8" fill="rgba(255, 255, 255, 0.02)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+                
+                <!-- Track indicator pill / dot -->
+                <circle cx="16" cy="17" r="4.5" fill="#38BDF8" filter="url(#glow-38BDF8)"/>
+                
+                <!-- Title -->
+                <text x="30" y="22" fill="#F1F5F9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif" font-size="13" font-weight="600">
+                    Python
+                </text>
+                
+                <!-- Solved count pill -->
+                <rect x="284" y="8" width="82" height="18" rx="9" fill="rgba(255, 255, 255, 0.05)"/>
+                <text x="325" y="21" text-anchor="middle" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif" font-size="11" font-weight="500">
+                    1 solved
+                </text>
+                
+                <!-- Star Rating -->
+                <g transform="translate(450, 10)">
+                    <g transform="translate(0, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="url(#gold-star-grad)" filter="url(#star-glow)"/></g><g transform="translate(18, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g><g transform="translate(36, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g><g transform="translate(54, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g><g transform="translate(72, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g>
+                </g>
+            </g>
+            
+
+  <!-- FOOTER -->
+  <g transform="translate(24, 304)">
+    <line x1="0" y1="-8" x2="552" y2="-8" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1" />
+    <text x="0" y="4" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+      ⚡ Live HackerRank Telemetry
+    </text>
+    <text x="552" y="4" text-anchor="end" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+      Updated 2026-10-27 (UTC)
     </text>
   </g>
-
-  <!-- Personal Branding Watermark -->
-  <a href="https://github.com/Tharun4743/github-profile-visualizer" target="_blank">
-    <text x="443" y="183" text-anchor="end" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" opacity="0.85">⚡ by @Tharun4743</text>
-  </a>
 </svg>
