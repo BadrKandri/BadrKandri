@@ -1,0 +1,37 @@
+<svg width="780" height="46" viewBox="0 0 780 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fade-left-neetcode" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="fade-right-neetcode" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pill-bg-neetcode" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17"/>
+      <stop offset="100%" stop-color="#121826"/>
+    </linearGradient>
+    <filter id="glow-neetcode" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#A855F7" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Accent Fading Lines -->
+  <line x1="24" y1="23" x2="250" y2="23" stroke="url(#fade-left-neetcode)" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="530" y1="23" x2="756" y2="23" stroke="url(#fade-right-neetcode)" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Center Capsule -->
+  <rect x="264" y="6" width="252" height="34" rx="17" fill="url(#pill-bg-neetcode)" stroke="#A855F7" stroke-opacity="0.38" stroke-width="1.2"/>
+
+  <!-- Glowing Dot -->
+  <circle cx="282" cy="23" r="3" fill="#A855F7" filter="url(#glow-neetcode)"/>
+
+  <!-- Icon & Text Group -->
+  <g transform="translate(294, 23)">
+    <path d="M6 1H9V3C10 3 11 4 11 5C11 6 10 7 9 7V9H7C7 8 6 7 5 7C4 7 3 8 3 9H1V6C2 6 3 5 3 4C3 3 2 2 1 2V1H4C4 2 5 3 6 3C7 3 8 2 8 1H6Z" stroke="#A855F7" stroke-width="1.2" fill="#A855F7" fill-opacity="0.2" stroke-linejoin="round" transform="translate(0, -6)"/>
+    <text x="22" y="4" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1px">
+      NEETCODE 150 ROADMAP
+    </text>
+  </g>
+</svg>

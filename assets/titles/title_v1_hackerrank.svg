@@ -1,0 +1,37 @@
+<svg width="780" height="46" viewBox="0 0 780 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fade-left-hackerrank" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00EA64" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#00EA64" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="fade-right-hackerrank" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00EA64" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#00EA64" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pill-bg-hackerrank" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17"/>
+      <stop offset="100%" stop-color="#121826"/>
+    </linearGradient>
+    <filter id="glow-hackerrank" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#00EA64" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Accent Fading Lines -->
+  <line x1="24" y1="23" x2="252" y2="23" stroke="url(#fade-left-hackerrank)" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="528" y1="23" x2="756" y2="23" stroke="url(#fade-right-hackerrank)" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Center Capsule -->
+  <rect x="266" y="6" width="248" height="34" rx="17" fill="url(#pill-bg-hackerrank)" stroke="#00EA64" stroke-opacity="0.38" stroke-width="1.2"/>
+
+  <!-- Glowing Dot -->
+  <circle cx="284" cy="23" r="3" fill="#00EA64" filter="url(#glow-hackerrank)"/>
+
+  <!-- Icon & Text Group -->
+  <g transform="translate(296, 23)">
+    <path d="M0 2.5L7 0L14 2.5V12.5L7 15L0 12.5V2.5Z" stroke="#00EA64" stroke-width="1.2" fill="#00EA64" fill-opacity="0.2" transform="translate(0, -8)"/><path d="M4.5 5V10M9.5 5V10M4.5 7.5H9.5" stroke="#00EA64" stroke-width="1.1" stroke-linecap="round" transform="translate(0, -8)"/>
+    <text x="22" y="4" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1px">
+      HACKERRANK PROGRESS
+    </text>
+  </g>
+</svg>

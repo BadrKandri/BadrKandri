@@ -3,6 +3,12 @@
 </p>
 
 <p align="center">
+  <img src="assets/titles/title_v1_about.svg" width="780" alt="About Me" />
+</p>
+
+I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in **Information Systems & Big Data**, driven by a passion for bridging theoretical mathematics with scalable production AI. My technical focus centers on architecting **Autonomous Agentic Systems** (LangGraph, Agno, Hybrid RAG with Qdrant), **LLM Fine-Tuning** (PEFT/LoRA), and **Industrial Machine Learning**, from implementing algorithms from first principles in pure NumPy to training models on **5M+ real transactions** ($R^2 = 0.93$) for PortNet. With hands-on experience engineering microservices, streaming pipelines, and AI agents at SOFAC and Peaqock Financials, I am currently seeking an **End-of-Studies Internship (PFE)** in Data Science & AI to deliver impactful, data-driven solutions.
+
+<p align="center">
   <a href="https://www.hackerrank.com/profile/badr_kandri_10">
     <img src="assets/header/badge_hackerrank.svg" height="34" alt="HackerRank" />
   </a>
@@ -16,65 +22,45 @@
   </a>
 </p>
 
----
-
-### ⚡ About Me
-
-I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in **Information Systems & Big Data**, driven by a passion for bridging theoretical mathematics with scalable production AI. My technical focus centers on architecting **Autonomous Agentic Systems** (LangGraph, Agno, Hybrid RAG with Qdrant), **LLM Fine-Tuning** (PEFT/LoRA), and **Industrial Machine Learning**, from implementing algorithms from first principles in pure NumPy to training models on **5M+ real transactions** ($R^2 = 0.93$) for PortNet. With hands-on experience engineering microservices, streaming pipelines, and AI agents at SOFAC and Peaqock Financials, I am currently seeking an **End-of-Studies Internship (PFE)** in Data Science & AI to deliver impactful, data-driven solutions.
-
----
-
-### 🛠️ Tech Stack & Core Competencies
-
 <p align="center">
-  <img src="assets/skills/card_v1_ai_engineering.svg" width="390" alt="AI Engineering & Autonomous Agents" />
-  <img src="assets/skills/card_v1_machine_learning.svg" width="390" alt="Machine Learning & Data Science" />
-</p>
-<p align="center">
-  <img src="assets/skills/card_v1_data_engineering.svg" width="390" alt="Data Engineering & Big Data" />
-  <img src="assets/skills/card_v1_mlops.svg" width="390" alt="MLOps & Core Engineering" />
+  <img src="assets/titles/title_v1_tech_stack.svg" width="780" alt="Tech Stack &amp; Competencies" />
 </p>
 
----
-
-### 📂 Featured Projects
-
 <p align="center">
-  <a href="https://github.com/BadrKandri/PortNet-Predictive-Modeling">
-    <img src="assets/projects/card_v2_portnet.svg" width="260" alt="PortNet-Predictive-Modeling" />
-  </a>
-  <a href="https://github.com/BadrKandri/Sofac-commercial-agent">
-    <img src="assets/projects/card_v2_sofac.svg" width="260" alt="Sofac-commercial-agent" />
-  </a>
-  <a href="https://github.com/BadrKandri/PeaQock_Manus">
-    <img src="assets/projects/card_v2_peaqock_manus.svg" width="260" alt="PeaQock_Manus" />
-  </a>
+  <img src="assets/skills/card_v1_ai_engineering.svg" width="390" alt="AI Engineering &amp; Autonomous Agents" />
+  <img src="assets/skills/card_v1_machine_learning.svg" width="390" alt="Machine Learning &amp; Data Science" />
 </p>
 <p align="center">
-  <a href="https://github.com/BadrKandri/Deep-Learning">
-    <img src="assets/projects/card_v2_deep_learning.svg" width="260" alt="Deep-Learning" />
-  </a>
-  <a href="https://github.com/BadrKandri/Machine-Learning">
-    <img src="assets/projects/card_v2_machine_learning.svg" width="260" alt="Machine-Learning" />
-  </a>
-  <a href="https://github.com/BadrKandri/100-Days-Of-Code-PYTHON">
-    <img src="assets/projects/card_v2_python_100.svg" width="260" alt="100-Days-Of-Code-PYTHON" />
-  </a>
+  <img src="assets/skills/card_v1_data_engineering.svg" width="390" alt="Data Engineering &amp; Big Data" />
+  <img src="assets/skills/card_v1_mlops.svg" width="390" alt="MLOps &amp; Core Engineering" />
 </p>
-
----
-
-### 🏆 HackerRank Progress
 
 <p align="center">
-  <a href="https://www.hackerrank.com/profile/badr_kandri_10">
-    <img src="assets/hackerrank-dashboard.svg" alt="HackerRank Live Dashboard" width="600" />
-  </a>
+  <img src="assets/titles/title_v1_projects.svg" width="780" alt="Featured Projects" />
 </p>
 
----
+<p align="center">
+  <img src="assets/projects/card_v2_portnet.svg" width="260" alt="PortNet-Predictive-Modeling" />
+  <img src="assets/projects/card_v2_sofac.svg" width="260" alt="Sofac-commercial-agent" />
+  <img src="assets/projects/card_v2_peaqock_manus.svg" width="260" alt="PeaQock_Manus" />
+</p>
+<p align="center">
+  <img src="assets/projects/card_v2_deep_learning.svg" width="260" alt="Deep-Learning" />
+  <img src="assets/projects/card_v2_machine_learning.svg" width="260" alt="Machine-Learning" />
+  <img src="assets/projects/card_v2_python_100.svg" width="260" alt="100-Days-Of-Code-PYTHON" />
+</p>
 
-### 🧩 NeetCode 150 Progress
+<p align="center">
+  <img src="assets/titles/title_v1_hackerrank.svg" width="780" alt="HackerRank Progress" />
+</p>
+
+<p align="center">
+  <img src="assets/hackerrank-dashboard.svg" alt="HackerRank Live Dashboard" width="600" />
+</p>
+
+<p align="center">
+  <img src="assets/titles/title_v1_neetcode.svg" width="780" alt="NeetCode 150 Roadmap" />
+</p>
 
 <p align="center">
   <img src="assets/neetcode/card_v1_neetcode.svg" width="780" alt="NeetCode 150 Roadmap Tracker" />
@@ -83,5 +69,5 @@ I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in 
 ---
 
 <div align="center">
-  <sub>Designed &amp; maintained with ❤️ by <a href="https://github.com/BadrKandri">Badr Kandri</a></sub>
+  <sub>Designed &amp; maintained with ❤️ by Badr Kandri</sub>
 </div>

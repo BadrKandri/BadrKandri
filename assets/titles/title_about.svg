@@ -1,0 +1,37 @@
+<svg width="780" height="46" viewBox="0 0 780 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fade-left-about" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="fade-right-about" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pill-bg-about" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17"/>
+      <stop offset="100%" stop-color="#121826"/>
+    </linearGradient>
+    <filter id="glow-about" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#38BDF8" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Accent Fading Lines -->
+  <line x1="24" y1="23" x2="286" y2="23" stroke="url(#fade-left-about)" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="494" y1="23" x2="756" y2="23" stroke="url(#fade-right-about)" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Center Capsule -->
+  <rect x="300" y="6" width="180" height="34" rx="17" fill="url(#pill-bg-about)" stroke="#38BDF8" stroke-opacity="0.38" stroke-width="1.2"/>
+
+  <!-- Glowing Dot -->
+  <circle cx="318" cy="23" r="3" fill="#38BDF8" filter="url(#glow-about)"/>
+
+  <!-- Icon & Text Group -->
+  <g transform="translate(330, 23)">
+    <path d="M7 1C8.66 1 10 2.34 10 4C10 5.66 8.66 7 7 7C5.34 7 4 5.66 4 4C4 2.34 5.34 1 7 1ZM7 9C10.33 9 14 10.67 14 13V15H0V13C0 10.67 3.67 9 7 9Z" fill="#38BDF8" transform="translate(0, -8)"/>
+    <text x="22" y="4" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1px">
+      ABOUT ME
+    </text>
+  </g>
+</svg>
