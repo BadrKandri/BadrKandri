@@ -55,5 +55,5 @@ I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in 
 </p>
 
 <p align="center">
-  <img src="assets/footer/card_v1_footer.svg" width="780" alt="Designed &amp; maintained with ❤️ by Badr Kandri" />
+  <img src="assets/footer/card_v2_footer.svg" width="780" alt="Designed &amp; maintained with ❤️ by Badr Kandri" />
 </p>
