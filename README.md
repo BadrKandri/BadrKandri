@@ -34,40 +34,16 @@
 
 ---
 
-### 🛠️ Tech Stack & Skills
+### 🛠️ Tech Stack & Core Competencies
 
-<table>
-  <tr>
-    <td width="20%"><strong>Languages</strong></td>
-    <td>
-      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-      <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" alt="C" />
-      <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++" />
-      <img src="https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white" alt="SQL" />
-    </td>
-  </tr>
-  <tr>
-    <td><strong>AI & Data Science</strong></td>
-    <td>
-      <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" />
-      <img src="https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="pandas" />
-      <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="scikit-learn" />
-      <img src="https://img.shields.io/badge/Deep%20Learning-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="Deep Learning" />
-      <img src="https://img.shields.io/badge/NLP%20%26%20Transformers-8A2BE2?style=flat-square&logo=huggingface&logoColor=white" alt="NLP" />
-    </td>
-  </tr>
-  <tr>
-    <td><strong>Tools & Platforms</strong></td>
-    <td>
-      <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
-      <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-      <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions" />
-      <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter" />
-      <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux" />
-      <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="assets/skills/card_v1_ai_engineering.svg" width="390" alt="AI Engineering & Autonomous Agents" />
+  <img src="assets/skills/card_v1_machine_learning.svg" width="390" alt="Machine Learning & Data Science" />
+</p>
+<p align="center">
+  <img src="assets/skills/card_v1_data_engineering.svg" width="390" alt="Data Engineering & Big Data" />
+  <img src="assets/skills/card_v1_mlops.svg" width="390" alt="MLOps & Core Engineering" />
+</p>
 
 ---
 
