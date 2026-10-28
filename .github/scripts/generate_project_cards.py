@@ -2,15 +2,6 @@ import os
 
 projects = [
     {
-        "id": "meliodas_manus",
-        "title": "meliodas_manus",
-        "domain": "AI Engineering",
-        "domain_color": "#00EA64",
-        "desc_line1": "Multimodal AI Agent using GPT-4 Vision to",
-        "desc_line2": "analyze Excel files &amp; generate PDF reports.",
-        "tags": ["Python", "GPT-4V", "Vision AI"]
-    },
-    {
         "id": "portnet",
         "title": "PortNet-Predictive-Modeling",
         "domain": "Machine Learning",
@@ -27,6 +18,15 @@ projects = [
         "desc_line1": "Commercial intelligent agent for automated",
         "desc_line2": "customer interaction and process workflows.",
         "tags": ["Python", "LLMs", "Automation"]
+    },
+    {
+        "id": "peaqock_manus",
+        "title": "PeaQock_Manus",
+        "domain": "AI Engineering",
+        "domain_color": "#00EA64",
+        "desc_line1": "Multimodal AI Agent using GPT-4 Vision to",
+        "desc_line2": "analyze Excel files &amp; generate PDF reports.",
+        "tags": ["Python", "GPT-4V", "Vision AI"]
     },
     {
         "id": "deep_learning",
@@ -164,9 +164,23 @@ def main():
         os.makedirs(out_dir, exist_ok=True)
         for p in projects:
             svg_code = render_project_card(p)
+            # Write both regular and card_ prefixed files
             file_path = os.path.join(out_dir, f"{p['id']}.svg")
+            card_path = os.path.join(out_dir, f"card_{p['id']}.svg")
             with open(file_path, "w", encoding="utf-8") as f:
                 f.write(svg_code)
+            with open(card_path, "w", encoding="utf-8") as f:
+                f.write(svg_code)
+
+        # Also write legacy meliodas_manus aliases
+        p_manus = dict(projects[2])
+        p_manus["id"] = "meliodas_manus"
+        p_manus["title"] = "meliodas_manus"
+        svg_meliodas = render_project_card(p_manus)
+        with open(os.path.join(out_dir, "meliodas_manus.svg"), "w", encoding="utf-8") as f:
+            f.write(svg_meliodas)
+        with open(os.path.join(out_dir, "card_meliodas_manus.svg"), "w", encoding="utf-8") as f:
+            f.write(svg_meliodas)
 
     print("Regenerated all project cards with valid XML entities successfully!")
 
