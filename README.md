@@ -2,8 +2,6 @@
   <img src="assets/header/card_v3_header.svg" width="780" alt="Badreddine Idrissi Kandri - Junior Data Scientist/AI Engineer" />
 </p>
 
-I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in **Information Systems & Big Data**, driven by a passion for bridging theoretical mathematics with scalable production AI. My technical focus centers on architecting **Autonomous Agentic Systems** (LangGraph, Agno, Hybrid RAG with Qdrant), **LLM Fine-Tuning** (PEFT/LoRA), and **Industrial Machine Learning**, from implementing algorithms from first principles in pure NumPy to training models on **5M+ real transactions** ($R^2 = 0.93$) for PortNet. With hands-on experience engineering microservices, streaming pipelines, and AI agents at SOFAC and Peaqock Financials, I am currently seeking an **End-of-Studies Internship (PFE)** in Data Science & AI to deliver impactful, data-driven solutions.
-
 <p align="center">
   <a href="https://www.hackerrank.com/profile/badr_kandri_10">
     <img src="assets/header/badge_hackerrank.svg" height="34" alt="HackerRank" />
@@ -17,6 +15,8 @@ I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in 
     <img src="assets/header/badge_gmail.svg" height="34" alt="Direct Gmail" />
   </a>
 </p>
+
+I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in **Information Systems & Big Data**, driven by a passion for bridging theoretical mathematics with scalable production AI. My technical focus centers on architecting **Autonomous Agentic Systems** (LangGraph, Agno, Hybrid RAG with Qdrant), **LLM Fine-Tuning** (PEFT/LoRA), and **Industrial Machine Learning**, from implementing algorithms from first principles in pure NumPy to training models on **5M+ real transactions** ($R^2 = 0.93$) for PortNet. With hands-on experience engineering microservices, streaming pipelines, and AI agents at SOFAC and Peaqock Financials, I am currently seeking an **End-of-Studies Internship (PFE)** in Data Science & AI to deliver impactful, data-driven solutions.
 
 <p align="center">
   <img src="assets/titles/title_v1_tech_stack.svg" width="780" alt="Tech Stack &amp; Competencies" />
