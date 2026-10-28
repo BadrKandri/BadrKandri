@@ -54,8 +54,6 @@ I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in 
   <img src="assets/neetcode/card_v1_neetcode.svg" width="780" alt="NeetCode 150 Roadmap Tracker" />
 </p>
 
----
-
-<div align="center">
-  <sub>Designed &amp; maintained with ❤️ by Badr Kandri</sub>
-</div>
+<p align="center">
+  <img src="assets/footer/card_v1_footer.svg" width="780" alt="Designed &amp; maintained with ❤️ by Badr Kandri" />
+</p>

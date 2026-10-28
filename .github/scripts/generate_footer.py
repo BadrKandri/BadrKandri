@@ -1,0 +1,81 @@
+import os
+import xml.etree.ElementTree as ET
+
+# Design 1: Capsule with Fading Neon Lines (Matching Section Titles)
+def render_capsule_footer():
+    width = 780
+    height = 46
+    pill_w = 320
+    pill_x = int((width - pill_w) / 2)  # 230
+
+    svg = f'''<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fade-left-ft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00EA64" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="fade-right-ft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00EA64" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pill-bg-ft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17"/>
+      <stop offset="100%" stop-color="#121826"/>
+    </linearGradient>
+    <linearGradient id="pill-border-ft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00EA64" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="brand-grad-ft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00EA64"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+    <filter id="heart-glow-ft" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.2" flood-color="#EF4444" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Accent Fading Lines -->
+  <line x1="24" y1="23" x2="{pill_x - 14}" y2="23" stroke="url(#fade-left-ft)" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="{pill_x + pill_w + 14}" y1="23" x2="756" y2="23" stroke="url(#fade-right-ft)" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Center Capsule -->
+  <rect x="{pill_x}" y="6" width="{pill_w}" height="34" rx="17" fill="url(#pill-bg-ft)" stroke="url(#pill-border-ft)" stroke-width="1.2"/>
+
+  <!-- Center Content -->
+  <g transform="translate({pill_x + 26}, 23)">
+    <!-- Designed & maintained with -->
+    <text x="0" y="4" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500">
+      Designed &amp; maintained with
+    </text>
+    
+    <!-- Heart Icon -->
+    <g transform="translate(154, -7)">
+      <path d="M6 10.5L5.13 9.71C2.06 6.93 0.03 5.09 0.03 2.82C0.03 0.98 1.48 -0.47 3.32 -0.47C4.36 -0.47 5.36 0.01 6 0.77C6.64 0.01 7.64 -0.47 8.68 -0.47C10.52 -0.47 11.97 0.98 11.97 2.82C11.97 5.09 9.94 6.93 6.87 9.71L6 10.5Z" fill="#EF4444" filter="url(#heart-glow-ft)"/>
+    </g>
+
+    <!-- by Badr Kandri -->
+    <text x="174" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">
+      <tspan fill="#94A3B8" font-weight="500">by </tspan>
+      <tspan fill="url(#brand-grad-ft)" font-weight="700">Badr Kandri</tspan>
+    </text>
+  </g>
+</svg>'''
+    return svg
+
+def main():
+    out_dir = "assets/footer"
+    os.makedirs(out_dir, exist_ok=True)
+    c1 = render_capsule_footer()
+    ET.fromstring(c1)
+    for name in ["footer_capsule.svg", "card_footer.svg", "card_v1_footer.svg"]:
+        with open(os.path.join(out_dir, name), "w", encoding="utf-8") as f:
+            f.write(c1)
+    print("Generated footer SVGs successfully!")
+
+if __name__ == "__main__":
+    main()
