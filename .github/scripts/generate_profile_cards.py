@@ -2,7 +2,7 @@ import os
 
 def render_header_card():
     width = 780
-    height = 195
+    height = 142
     svg = f'''<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Background Gradient -->
@@ -82,50 +82,104 @@ def render_header_card():
       Engineering autonomous AI agents, scalable industrial ML pipelines, and production data workflows.
     </text>
   </g>
-
-  <!-- Divider Line -->
-  <line x1="32" y1="140" x2="{width - 32}" y2="140" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1" />
-
-  <!-- Metric Badges Row -->
-  <g transform="translate(32, 154)">
-    <!-- Metric 1: Transactions -->
-    <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="168" height="24" rx="7" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="0.8"/>
-      <circle cx="12" cy="12" r="2.5" fill="#38BDF8"/>
-      <text x="22" y="15.5" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
-        <tspan font-weight="700" fill="#38BDF8">+5M</tspan> Transactions Modeled
-      </text>
-    </g>
-
-    <!-- Metric 2: R^2 Score -->
-    <g transform="translate(178, 0)">
-      <rect x="0" y="0" width="154" height="24" rx="7" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="0.8"/>
-      <circle cx="12" cy="12" r="2.5" fill="#F97316"/>
-      <text x="22" y="15.5" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
-        <tspan font-weight="700" fill="#F97316">R² = 0.93</tspan> PortNet Model
-      </text>
-    </g>
-
-    <!-- Metric 3: HackerRank -->
-    <g transform="translate(342, 0)">
-      <rect x="0" y="0" width="176" height="24" rx="7" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="0.8"/>
-      <circle cx="12" cy="12" r="2.5" fill="#00EA64"/>
-      <text x="22" y="15.5" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
-        <tspan font-weight="700" fill="#00EA64">Level 5</tspan> HackerRank Ranked
-      </text>
-    </g>
-
-    <!-- Metric 4: Multi-Agent -->
-    <g transform="translate(528, 0)">
-      <rect x="0" y="0" width="188" height="24" rx="7" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="0.8"/>
-      <circle cx="12" cy="12" r="2.5" fill="#A855F7"/>
-      <text x="22" y="15.5" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
-        <tspan font-weight="700" fill="#A855F7">LangGraph</tspan> &amp; Qdrant RAG
-      </text>
-    </g>
-  </g>
 </svg>
 '''
+    return svg
+
+def render_badge_hackerrank():
+    width = 190
+    height = 34
+    color = "#00EA64"
+    svg = f'''<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-hr" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17"/>
+      <stop offset="100%" stop-color="#121826"/>
+    </linearGradient>
+    <filter id="glow-hr" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="{color}" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="16" fill="url(#bg-hr)" stroke="{color}" stroke-opacity="0.4" stroke-width="1.2"/>
+  <!-- HackerRank Icon -->
+  <g transform="translate(14, 9)">
+    <path d="M0 2.5L7 0L14 2.5V13.5L7 16L0 13.5V2.5Z" fill="{color}" fill-opacity="0.15" stroke="{color}" stroke-width="1.2"/>
+    <path d="M4.5 5.5V10.5M9.5 5.5V10.5M4.5 8H9.5" stroke="{color}" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+  <!-- Text -->
+  <g transform="translate(36, 13)">
+    <text x="0" y="0" fill="{color}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.4px">HACKERRANK</text>
+    <text x="0" y="12" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600">badr_kandri_10</text>
+  </g>
+  <!-- Link Arrow -->
+  <g transform="translate({width - 22}, 11)">
+    <path d="M1 9L9 1M9 1H3M9 1V7" stroke="#64748B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>'''
+    return svg
+
+def render_badge_linkedin():
+    width = 220
+    height = 34
+    color = "#38BDF8"
+    svg = f'''<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-li" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17"/>
+      <stop offset="100%" stop-color="#121826"/>
+    </linearGradient>
+    <filter id="glow-li" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="{color}" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="16" fill="url(#bg-li)" stroke="{color}" stroke-opacity="0.4" stroke-width="1.2"/>
+  <!-- LinkedIn Icon -->
+  <g transform="translate(14, 9)">
+    <rect x="0" y="0" width="16" height="16" rx="3.5" fill="{color}" fill-opacity="0.15" stroke="{color}" stroke-width="1.2"/>
+    <text x="8" y="12" text-anchor="middle" fill="{color}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="800">in</text>
+  </g>
+  <!-- Text -->
+  <g transform="translate(38, 13)">
+    <text x="0" y="0" fill="{color}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.4px">LINKEDIN</text>
+    <text x="0" y="12" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600">Badreddine Idrissi</text>
+  </g>
+  <!-- Link Arrow -->
+  <g transform="translate({width - 22}, 11)">
+    <path d="M1 9L9 1M9 1H3M9 1V7" stroke="#64748B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>'''
+    return svg
+
+def render_badge_gmail():
+    width = 215
+    height = 34
+    color = "#EA4335"
+    svg = f'''<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17"/>
+      <stop offset="100%" stop-color="#121826"/>
+    </linearGradient>
+    <filter id="glow-gm" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="{color}" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="16" fill="url(#bg-gm)" stroke="{color}" stroke-opacity="0.4" stroke-width="1.2"/>
+  <!-- Gmail / Mail Icon -->
+  <g transform="translate(14, 9)">
+    <rect x="0" y="1" width="16" height="14" rx="2.5" fill="{color}" fill-opacity="0.15" stroke="{color}" stroke-width="1.2"/>
+    <path d="M1 2L8 8L15 2" stroke="{color}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Text -->
+  <g transform="translate(38, 13)">
+    <text x="0" y="0" fill="{color}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.4px">DIRECT GMAIL</text>
+    <text x="0" y="12" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600">Send Email Now</text>
+  </g>
+  <!-- Link Arrow -->
+  <g transform="translate({width - 22}, 11)">
+    <path d="M1 9L9 1M9 1H3M9 1V7" stroke="#64748B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>'''
     return svg
 
 def render_about_profile_card():
@@ -303,13 +357,25 @@ def main():
     os.makedirs(header_dir, exist_ok=True)
     os.makedirs(about_dir, exist_ok=True)
 
-    # 1. Header Card
+    # 1. Header Card (Updated without bottom pills)
     header_svg = render_header_card()
-    for prefix in ["", "card_", "card_v1_"]:
+    for prefix in ["", "card_", "card_v1_", "card_v2_"]:
         with open(os.path.join(header_dir, f"{prefix}header.svg"), "w", encoding="utf-8") as f:
             f.write(header_svg)
 
-    # 2. About Cards
+    # 2. Contact Badges (HackerRank, LinkedIn, Direct Gmail)
+    badge_hr = render_badge_hackerrank()
+    badge_li = render_badge_linkedin()
+    badge_gm = render_badge_gmail()
+
+    with open(os.path.join(header_dir, "badge_hackerrank.svg"), "w", encoding="utf-8") as f:
+        f.write(badge_hr)
+    with open(os.path.join(header_dir, "badge_linkedin.svg"), "w", encoding="utf-8") as f:
+        f.write(badge_li)
+    with open(os.path.join(header_dir, "badge_gmail.svg"), "w", encoding="utf-8") as f:
+        f.write(badge_gm)
+
+    # 3. About Cards
     prof_svg = render_about_profile_card()
     for prefix in ["", "card_", "card_v1_"]:
         with open(os.path.join(about_dir, f"{prefix}profile.svg"), "w", encoding="utf-8") as f:
@@ -320,7 +386,7 @@ def main():
         with open(os.path.join(about_dir, f"{prefix}experience.svg"), "w", encoding="utf-8") as f:
             f.write(exp_svg)
 
-    print("Profile cards generated successfully!")
+    print("Profile cards & custom contact badges generated successfully!")
 
 if __name__ == "__main__":
     main()

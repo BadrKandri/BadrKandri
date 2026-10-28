@@ -1,18 +1,18 @@
 <p align="center">
-  <img src="assets/header/card_v1_header.svg" width="780" alt="Badreddine Idrissi Kandri - Data Scientist &amp; Ingénieur Data/IA" />
+  <img src="assets/header/card_v2_header.svg" width="780" alt="Badreddine Idrissi Kandri - Data Scientist &amp; Ingénieur Data/IA" />
 </p>
 
 <p align="center">
   <a href="https://www.hackerrank.com/profile/badr_kandri_10">
-    <img src="https://img.shields.io/badge/HackerRank-badr__kandri__10-00EA64?style=for-the-badge&logo=hackerrank&logoColor=black" alt="HackerRank" />
+    <img src="assets/header/badge_hackerrank.svg" height="34" alt="HackerRank" />
   </a>
-  <br/>
+  &nbsp;
   <a href="https://www.linkedin.com/in/badreddine-idrissi-kandri-365438329/">
-    <img src="https://img.shields.io/badge/LinkedIn-Badreddine%20Idrissi%20Kandri-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="assets/header/badge_linkedin.svg" height="34" alt="LinkedIn" />
   </a>
-  <br/>
-  <a href="mailto:badr.kandri.10@gmail.com">
-    <img src="https://img.shields.io/badge/Email-badr.kandri.10%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  &nbsp;
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=badr.kandri.10@gmail.com">
+    <img src="assets/header/badge_gmail.svg" height="34" alt="Direct Gmail" />
   </a>
 </p>
 

@@ -1,0 +1,26 @@
+<svg width="220" height="34" viewBox="0 0 220 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-li" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17"/>
+      <stop offset="100%" stop-color="#121826"/>
+    </linearGradient>
+    <filter id="glow-li" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#38BDF8" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="218" height="32" rx="16" fill="url(#bg-li)" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1.2"/>
+  <!-- LinkedIn Icon -->
+  <g transform="translate(14, 9)">
+    <rect x="0" y="0" width="16" height="16" rx="3.5" fill="#38BDF8" fill-opacity="0.15" stroke="#38BDF8" stroke-width="1.2"/>
+    <text x="8" y="12" text-anchor="middle" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="800">in</text>
+  </g>
+  <!-- Text -->
+  <g transform="translate(38, 13)">
+    <text x="0" y="0" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.4px">LINKEDIN</text>
+    <text x="0" y="12" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600">Badreddine Idrissi</text>
+  </g>
+  <!-- Link Arrow -->
+  <g transform="translate(198, 11)">
+    <path d="M1 9L9 1M9 1H3M9 1V7" stroke="#64748B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
