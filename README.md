@@ -23,7 +23,7 @@ I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in 
 </p>
 
 <p align="center">
-  <img src="assets/skills/card_v2_data_science.svg" width="390" alt="Data Science" />
+  <img src="assets/skills/card_v2_data_science.svg" width="390" alt="Data Science &amp; AI" />
   <img src="assets/skills/card_v2_mlops_bigdata.svg" width="390" alt="MLOps &amp; Big Data" />
 </p>
 

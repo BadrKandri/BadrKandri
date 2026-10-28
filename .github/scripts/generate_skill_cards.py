@@ -1,12 +1,11 @@
 import os
+import xml.etree.ElementTree as ET
 
 skill_categories = [
     {
         "id": "data_science",
-        "title": "Data Science",
-        "domain": "Data Science &amp; AI",
+        "title": "Data Science &amp; AI",
         "domain_color": "#38BDF8",  # Cyan Blue
-        "subtitle": "Machine Learning, Agentic AI &amp; Statistical Modeling",
         "icon": '''
           <path d="M11 1L12.4 5.2L16.5 6.6L12.4 8L11 12.2L9.6 8L5.5 6.6L9.6 5.2L11 1Z" fill="{color}" fill-opacity="0.25" stroke="{color}" stroke-width="1.3" stroke-linejoin="round"/>
           <path d="M4.5 12.5L5.2 14.4L7.1 15.1L5.2 15.8L4.5 17.7L3.8 15.8L1.9 15.1L3.8 14.4L4.5 12.5Z" fill="{color}" stroke="{color}" stroke-width="0.9" stroke-linejoin="round"/>
@@ -22,9 +21,7 @@ skill_categories = [
     {
         "id": "mlops_bigdata",
         "title": "MLOps &amp; Big Data",
-        "domain": "MLOps &amp; Data Engineering",
         "domain_color": "#00EA64",  # Emerald Green
-        "subtitle": "Distributed Big Data, Containers &amp; CI/CD Pipelines",
         "icon": '''
           <rect x="2" y="3" width="16" height="13" rx="2" stroke="{color}" stroke-width="1.4" fill="{color}" fill-opacity="0.1"/>
           <path d="M6 7.5L9 9.5L6 11.5" stroke="{color}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -41,16 +38,13 @@ skill_categories = [
 
 def render_skill_card(c):
     width = 390
-    height = 215
+    height = 182
     dom_color = c["domain_color"]
     icon_svg = c["icon"].replace("{color}", dom_color)
-    clean_domain = c["domain"].replace("&amp;", "&")
-    domain_text = clean_domain.upper().replace("&", "&amp;")
-    pill_badge_w = len(clean_domain) * 6.5 + 20
 
     # Render pill rows (4 rows)
     rows_svg = []
-    y_start = 94
+    y_start = 58
     row_height = 28
 
     for r_idx, row in enumerate(c["rows"]):
@@ -110,27 +104,13 @@ def render_skill_card(c):
     </g>
 
     <!-- Title -->
-    <text x="26" y="14" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" letter-spacing="-0.2px">
+    <text x="26" y="14" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="700" letter-spacing="-0.2px">
       {c['title']}
     </text>
   </g>
 
-  <!-- Domain Pill Badge -->
-  <g transform="translate(18, 38)">
-    <rect x="0" y="0" width="{pill_badge_w}" height="17" rx="8.5" fill="{dom_color}" fill-opacity="0.1" stroke="{dom_color}" stroke-opacity="0.3" stroke-width="0.8"/>
-    <circle cx="8" cy="8.5" r="2.5" fill="{dom_color}" filter="url(#glow-{c['id']})"/>
-    <text x="16" y="12" fill="{dom_color}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" letter-spacing="0.3px">
-      {domain_text}
-    </text>
-  </g>
-
-  <!-- Subtitle / Focus Summary -->
-  <text x="18" y="66" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="400">
-    {c['subtitle']}
-  </text>
-
   <!-- Divider Line -->
-  <line x1="18" y1="78" x2="{width - 18}" y2="78" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
+  <line x1="18" y1="45" x2="{width - 18}" y2="45" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1" />
 
   <!-- Skill Badges Grid (4 Rows) -->
   {skills_content}
@@ -146,12 +126,14 @@ def main():
         os.makedirs(out_dir, exist_ok=True)
         for c in skill_categories:
             svg_code = render_skill_card(c)
+            # Verify XML parsing
+            ET.fromstring(svg_code)
             for prefix in ["", "card_", "card_v1_", "card_v2_"]:
                 file_path = os.path.join(out_dir, f"{prefix}{c['id']}.svg")
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.write(svg_code)
 
-    print("Regenerated 2-card Tech Stack successfully!")
+    print("Regenerated clean 2-card Tech Stack successfully without pill/subtitle!")
 
 if __name__ == "__main__":
     main()
