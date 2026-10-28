@@ -1,36 +1,29 @@
-<div align="center">
+<p align="center">
+  <img src="assets/header/card_v1_header.svg" width="780" alt="Badreddine Idrissi Kandri - Data Scientist &amp; Ingénieur Data/IA" />
+</p>
 
-  <h1>Hi, I'm <span style="color: #00EA64;">Badr Kandri</span> 👋</h1>
-  
-  <p>
-    <strong>Engineering Student</strong> · Focused on <strong>Machine Learning Fundamentals</strong>, <strong>Deep Learning</strong> & <strong>NLP</strong><br/>
-    <em>Building algorithms from scratch, engineering autonomous AI agents, and mastering problem solving.</em>
-  </p>
-
-  <p>
-    <a href="https://www.hackerrank.com/profile/badr_kandri_10">
-      <img src="https://img.shields.io/badge/HackerRank-badr__kandri__10-00EA64?style=for-the-badge&logo=hackerrank&logoColor=black" alt="HackerRank" />
-    </a>
-    <br/>
-    <a href="https://www.linkedin.com/in/badreddine-idrissi-kandri-365438329/">
-      <img src="https://img.shields.io/badge/LinkedIn-Badreddine%20Idrissi%20Kandri-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-    </a>
-    <br/>
-    <a href="mailto:badr.kandri.10@gmail.com">
-      <img src="https://img.shields.io/badge/Email-badr.kandri.10%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-    </a>
-  </p>
-
-</div>
+<p align="center">
+  <a href="https://www.hackerrank.com/profile/badr_kandri_10">
+    <img src="https://img.shields.io/badge/HackerRank-badr__kandri__10-00EA64?style=for-the-badge&logo=hackerrank&logoColor=black" alt="HackerRank" />
+  </a>
+  <br/>
+  <a href="https://www.linkedin.com/in/badreddine-idrissi-kandri-365438329/">
+    <img src="https://img.shields.io/badge/LinkedIn-Badreddine%20Idrissi%20Kandri-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <br/>
+  <a href="mailto:badr.kandri.10@gmail.com">
+    <img src="https://img.shields.io/badge/Email-badr.kandri.10%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+</p>
 
 ---
 
 ### ⚡ About Me
 
-- 🎓 **Focus Areas**: Machine Learning from scratch, Deep Learning architectures (Transformers & CNNs), and NLP.
-- 💻 **Hands-on Implementation**: Recreating core algorithms (logistic regression, backprop, k-means) using pure NumPy.
-- 🤖 **AI Agents**: Designing multimodal AI agents utilizing GPT-4 Vision, document reasoning, and automation workflows.
-- 🎯 **Competitive Coding**: Actively solving technical challenges on HackerRank and NeetCode 150.
+<p align="center">
+  <img src="assets/about/card_v1_profile.svg" width="390" alt="Academic &amp; Research Focus" />
+  <img src="assets/about/card_v1_experience.svg" width="390" alt="Experience &amp; Leadership" />
+</p>
 
 ---
 
