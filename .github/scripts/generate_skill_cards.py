@@ -2,90 +2,56 @@ import os
 
 skill_categories = [
     {
-        "id": "ai_engineering",
-        "title": "AI Engineering &amp; Autonomous Agents",
-        "domain": "AI Engineering",
-        "domain_color": "#38BDF8",  # Blue
-        "subtitle": "Agentic Workflows, Hybrid RAG &amp; LLM Fine-Tuning",
+        "id": "data_science",
+        "title": "Data Science",
+        "domain": "Data Science &amp; AI",
+        "domain_color": "#38BDF8",  # Cyan Blue
+        "subtitle": "Machine Learning, Agentic AI &amp; Statistical Modeling",
         "icon": '''
           <path d="M11 1L12.4 5.2L16.5 6.6L12.4 8L11 12.2L9.6 8L5.5 6.6L9.6 5.2L11 1Z" fill="{color}" fill-opacity="0.25" stroke="{color}" stroke-width="1.3" stroke-linejoin="round"/>
           <path d="M4.5 12.5L5.2 14.4L7.1 15.1L5.2 15.8L4.5 17.7L3.8 15.8L1.9 15.1L3.8 14.4L4.5 12.5Z" fill="{color}" stroke="{color}" stroke-width="0.9" stroke-linejoin="round"/>
           <path d="M16 11.5L16.6 13.1L18.2 13.7L16.6 14.3L16 15.9L15.4 14.3L13.8 13.7L15.4 13.1L16 11.5Z" fill="{color}" stroke="{color}" stroke-width="0.9" stroke-linejoin="round"/>
         ''',
         "rows": [
-            ["LangGraph Workflows", "Agno Multi-Agents"],
-            ["Hybrid RAG", "Qdrant Vector", "ChromaDB"],
-            ["PEFT / LoRA", "LLaMA-Factory", "OpenAI &amp; Claude"]
-        ]
-    },
-    {
-        "id": "machine_learning",
-        "title": "Machine Learning &amp; Data Science",
-        "domain": "Machine Learning",
-        "domain_color": "#F97316",  # Orange
-        "subtitle": "Predictive Modeling, Statistical Learning &amp; EDA",
-        "icon": '''
-          <path d="M2 16L7 10L11 14L18 5" stroke="{color}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="7" cy="10" r="2" fill="{color}"/>
-          <circle cx="11" cy="14" r="2" fill="{color}"/>
-          <circle cx="18" cy="5" r="2.2" fill="{color}"/>
-          <path d="M2 19H19" stroke="{color}" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
-        ''',
-        "rows": [
             ["Scikit-Learn", "NumPy &amp; Pandas", "XGBoost"],
-            ["SVM &amp; PCA", "Random Forest", "GridSearchCV"],
+            ["LangGraph", "Agentic AI &amp; RAG", "Qdrant"],
+            ["PEFT / LoRA", "LLaMA-Factory", "SVM &amp; PCA"],
             ["Power BI Dashboards", "CRISP-DM / EDA"]
         ]
     },
     {
-        "id": "data_engineering",
-        "title": "Data Engineering &amp; Big Data",
-        "domain": "Data Engineering",
-        "domain_color": "#A855F7",  # Violet
-        "subtitle": "Distributed Computing, Streaming &amp; Data Pipelines",
-        "icon": '''
-          <ellipse cx="10" cy="4" rx="7" ry="2.6" stroke="{color}" stroke-width="1.3" fill="{color}" fill-opacity="0.2"/>
-          <path d="M3 4V9.5C3 11 6.1 12.1 10 12.1C13.9 12.1 17 11 17 9.5V4" stroke="{color}" stroke-width="1.3"/>
-          <path d="M3 9.5V15C3 16.5 6.1 17.6 10 17.6C13.9 17.6 17 16.5 17 15V9.5" stroke="{color}" stroke-width="1.3"/>
-        ''',
-        "rows": [
-            ["Apache Spark", "PySpark", "Apache Kafka"],
-            ["Hadoop Ecosystem", "ETL / ELT Pipelines"],
-            ["SQL Relational", "MongoDB (NoSQL)"]
-        ]
-    },
-    {
-        "id": "mlops",
-        "title": "MLOps &amp; Core Engineering",
-        "domain": "Coding &amp; MLOps",
+        "id": "mlops_bigdata",
+        "title": "MLOps &amp; Big Data",
+        "domain": "MLOps &amp; Data Engineering",
         "domain_color": "#00EA64",  # Emerald Green
-        "subtitle": "Containerization, Microservices &amp; CI/CD Pipelines",
+        "subtitle": "Distributed Big Data, Containers &amp; CI/CD Pipelines",
         "icon": '''
           <rect x="2" y="3" width="16" height="13" rx="2" stroke="{color}" stroke-width="1.4" fill="{color}" fill-opacity="0.1"/>
           <path d="M6 7.5L9 9.5L6 11.5" stroke="{color}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M11 11.5H14" stroke="{color}" stroke-width="1.3" stroke-linecap="round"/>
         ''',
         "rows": [
-            ["Python 3", "FastAPI (Async Microservices)"],
+            ["Apache Spark", "PySpark", "Apache Kafka"],
             ["Docker", "Kubernetes", "Linux (Bash)"],
-            ["Git / GitHub", "CI/CD Automation"]
+            ["FastAPI (Async)", "SQL", "MongoDB (NoSQL)"],
+            ["Hadoop Ecosystem", "CI/CD Pipelines"]
         ]
     }
 ]
 
 def render_skill_card(c):
     width = 390
-    height = 185
+    height = 215
     dom_color = c["domain_color"]
     icon_svg = c["icon"].replace("{color}", dom_color)
     clean_domain = c["domain"].replace("&amp;", "&")
     domain_text = clean_domain.upper().replace("&", "&amp;")
     pill_badge_w = len(clean_domain) * 6.5 + 20
 
-    # Render pill rows
+    # Render pill rows (4 rows)
     rows_svg = []
-    y_start = 92
-    row_height = 29
+    y_start = 94
+    row_height = 28
 
     for r_idx, row in enumerate(c["rows"]):
         y = y_start + r_idx * row_height
@@ -144,7 +110,7 @@ def render_skill_card(c):
     </g>
 
     <!-- Title -->
-    <text x="26" y="14" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="700" letter-spacing="-0.2px">
+    <text x="26" y="14" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" letter-spacing="-0.2px">
       {c['title']}
     </text>
   </g>
@@ -166,7 +132,7 @@ def render_skill_card(c):
   <!-- Divider Line -->
   <line x1="18" y1="78" x2="{width - 18}" y2="78" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
 
-  <!-- Skill Badges Grid -->
+  <!-- Skill Badges Grid (4 Rows) -->
   {skills_content}
 </svg>
 '''
@@ -180,12 +146,12 @@ def main():
         os.makedirs(out_dir, exist_ok=True)
         for c in skill_categories:
             svg_code = render_skill_card(c)
-            for prefix in ["", "card_", "card_v1_"]:
+            for prefix in ["", "card_", "card_v1_", "card_v2_"]:
                 file_path = os.path.join(out_dir, f"{prefix}{c['id']}.svg")
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.write(svg_code)
 
-    print("Regenerated all skill cards successfully!")
+    print("Regenerated 2-card Tech Stack successfully!")
 
 if __name__ == "__main__":
     main()
