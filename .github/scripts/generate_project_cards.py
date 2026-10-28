@@ -5,7 +5,7 @@ projects = [
         "id": "portnet",
         "title": "PortNet-Predictive-Modeling",
         "domain": "Machine Learning",
-        "domain_color": "#38BDF8",
+        "domain_color": "#F97316",  # Orange for Machine Learning
         "desc_line1": "Predictive analytics &amp; feature engineering for",
         "desc_line2": "maritime logistics and port operations.",
         "tags": ["Python", "NumPy", "Jupyter"]
@@ -13,8 +13,8 @@ projects = [
     {
         "id": "sofac",
         "title": "Sofac-commercial-agent",
-        "domain": "AI Agent",
-        "domain_color": "#F59E0B",
+        "domain": "AI Engineering",
+        "domain_color": "#38BDF8",  # Blue for AI Engineering
         "desc_line1": "Commercial intelligent agent for automated",
         "desc_line2": "customer interaction and process workflows.",
         "tags": ["Python", "LLMs", "Automation"]
@@ -23,7 +23,7 @@ projects = [
         "id": "peaqock_manus",
         "title": "PeaQock_Manus",
         "domain": "AI Engineering",
-        "domain_color": "#00EA64",
+        "domain_color": "#38BDF8",  # Blue for AI Engineering
         "desc_line1": "Multimodal AI Agent using GPT-4 Vision to",
         "desc_line2": "analyze Excel files &amp; generate PDF reports.",
         "tags": ["Python", "GPT-4V", "Vision AI"]
@@ -32,7 +32,7 @@ projects = [
         "id": "deep_learning",
         "title": "Deep-Learning",
         "domain": "Deep Learning",
-        "domain_color": "#A855F7",
+        "domain_color": "#A855F7",  # Violet for Deep Learning
         "desc_line1": "Neural networks from scratch, backprop",
         "desc_line2": "implementations, and NLP experiments.",
         "tags": ["PyTorch", "Neural Nets", "NLP"]
@@ -40,8 +40,8 @@ projects = [
     {
         "id": "machine_learning",
         "title": "Machine-Learning",
-        "domain": "ML Algorithms",
-        "domain_color": "#00EA64",
+        "domain": "Machine Learning",
+        "domain_color": "#F97316",  # Orange for Machine Learning
         "desc_line1": "Core algorithms (Logistic Regression, K-Means)",
         "desc_line2": "implemented from ground zero in pure NumPy.",
         "tags": ["Python", "NumPy", "From Scratch"]
@@ -49,8 +49,8 @@ projects = [
     {
         "id": "python_100",
         "title": "100-Days-Of-Code-PYTHON",
-        "domain": "Python Mastery",
-        "domain_color": "#38BDF8",
+        "domain": "Coding Mastery",
+        "domain_color": "#00EA64",  # Green for Coding Mastery
         "desc_line1": "Comprehensive codebase covering Python OOP,",
         "desc_line2": "algorithms, and 40+ practical applications.",
         "tags": ["Python", "40+ Projects", "OOP"]
@@ -93,10 +93,10 @@ def render_project_card(p):
       <stop offset="100%" stop-color="#121826" />
     </linearGradient>
 
-    <!-- Border Gradient with Emerald/Cyan touch -->
+    <!-- Border Gradient with accent touch -->
     <linearGradient id="border-grad-{p['id']}" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="{dom_color}" stop-opacity="0.4" />
-      <stop offset="40%" stop-color="#00EA64" stop-opacity="0.15" />
+      <stop offset="40%" stop-color="{dom_color}" stop-opacity="0.12" />
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
     </linearGradient>
 
@@ -112,7 +112,7 @@ def render_project_card(p):
   <!-- Ambient Light Corner Glow -->
   <circle cx="25" cy="25" r="45" fill="{dom_color}" opacity="0.06" />
 
-  <!-- Header: Icon + Title + Domain Badge -->
+  <!-- Header: Icon + Title + External Link Icon -->
   <g transform="translate(16, 16)">
     <!-- Repo Book Icon -->
     <g transform="translate(0, 1)">
@@ -164,25 +164,22 @@ def main():
         os.makedirs(out_dir, exist_ok=True)
         for p in projects:
             svg_code = render_project_card(p)
-            # Write both regular and card_ prefixed files
-            file_path = os.path.join(out_dir, f"{p['id']}.svg")
-            card_path = os.path.join(out_dir, f"card_{p['id']}.svg")
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.write(svg_code)
-            with open(card_path, "w", encoding="utf-8") as f:
-                f.write(svg_code)
+            # Write base, card_, and card_v2_ formats for full compatibility and instant cache busting
+            for prefix in ["", "card_", "card_v2_"]:
+                file_path = os.path.join(out_dir, f"{prefix}{p['id']}.svg")
+                with open(file_path, "w", encoding="utf-8") as f:
+                    f.write(svg_code)
 
         # Also write legacy meliodas_manus aliases
         p_manus = dict(projects[2])
         p_manus["id"] = "meliodas_manus"
         p_manus["title"] = "meliodas_manus"
         svg_meliodas = render_project_card(p_manus)
-        with open(os.path.join(out_dir, "meliodas_manus.svg"), "w", encoding="utf-8") as f:
-            f.write(svg_meliodas)
-        with open(os.path.join(out_dir, "card_meliodas_manus.svg"), "w", encoding="utf-8") as f:
-            f.write(svg_meliodas)
+        for prefix in ["", "card_", "card_v2_"]:
+            with open(os.path.join(out_dir, f"{prefix}meliodas_manus.svg"), "w", encoding="utf-8") as f:
+                f.write(svg_meliodas)
 
-    print("Regenerated all project cards with valid XML entities successfully!")
+    print("Regenerated all project cards with new color logic successfully!")
 
 if __name__ == "__main__":
     main()

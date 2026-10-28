@@ -7,10 +7,10 @@
       <stop offset="100%" stop-color="#121826" />
     </linearGradient>
 
-    <!-- Border Gradient with Emerald/Cyan touch -->
+    <!-- Border Gradient with accent touch -->
     <linearGradient id="border-grad-deep_learning" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#A855F7" stop-opacity="0.4" />
-      <stop offset="40%" stop-color="#00EA64" stop-opacity="0.15" />
+      <stop offset="40%" stop-color="#A855F7" stop-opacity="0.12" />
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
     </linearGradient>
 
@@ -26,7 +26,7 @@
   <!-- Ambient Light Corner Glow -->
   <circle cx="25" cy="25" r="45" fill="#A855F7" opacity="0.06" />
 
-  <!-- Header: Icon + Title + Domain Badge -->
+  <!-- Header: Icon + Title + External Link Icon -->
   <g transform="translate(16, 16)">
     <!-- Repo Book Icon -->
     <g transform="translate(0, 1)">

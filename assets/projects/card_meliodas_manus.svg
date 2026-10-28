@@ -7,16 +7,16 @@
       <stop offset="100%" stop-color="#121826" />
     </linearGradient>
 
-    <!-- Border Gradient with Emerald/Cyan touch -->
+    <!-- Border Gradient with accent touch -->
     <linearGradient id="border-grad-meliodas_manus" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00EA64" stop-opacity="0.4" />
-      <stop offset="40%" stop-color="#00EA64" stop-opacity="0.15" />
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.4" />
+      <stop offset="40%" stop-color="#38BDF8" stop-opacity="0.12" />
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
     </linearGradient>
 
     <!-- Glow Filter -->
     <filter id="glow-meliodas_manus" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#00EA64" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#38BDF8" flood-opacity="0.35"/>
     </filter>
   </defs>
 
@@ -24,14 +24,14 @@
   <rect x="1" y="1" width="293" height="134" rx="14" fill="url(#bg-grad-meliodas_manus)" stroke="url(#border-grad-meliodas_manus)" stroke-width="1.2" />
 
   <!-- Ambient Light Corner Glow -->
-  <circle cx="25" cy="25" r="45" fill="#00EA64" opacity="0.06" />
+  <circle cx="25" cy="25" r="45" fill="#38BDF8" opacity="0.06" />
 
-  <!-- Header: Icon + Title + Domain Badge -->
+  <!-- Header: Icon + Title + External Link Icon -->
   <g transform="translate(16, 16)">
     <!-- Repo Book Icon -->
     <g transform="translate(0, 1)">
-      <path d="M2 1.5C2 0.67 2.67 0 3.5 0H12.5C13.33 0 14 0.67 14 1.5V12C14 12.83 13.33 13.5 12.5 13.5H3.5C2.67 13.5 2 12.83 2 12V1.5Z" stroke="#00EA64" stroke-width="1.5" fill="none"/>
-      <path d="M5 4H11M5 7H9" stroke="#00EA64" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M2 1.5C2 0.67 2.67 0 3.5 0H12.5C13.33 0 14 0.67 14 1.5V12C14 12.83 13.33 13.5 12.5 13.5H3.5C2.67 13.5 2 12.83 2 12V1.5Z" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+      <path d="M5 4H11M5 7H9" stroke="#38BDF8" stroke-width="1.3" stroke-linecap="round"/>
     </g>
 
     <!-- Title -->
@@ -47,9 +47,9 @@
 
   <!-- Domain Tag / Category Pill -->
   <g transform="translate(16, 38)">
-    <rect x="0" y="0" width="111.0" height="17" rx="8.5" fill="#00EA64" fill-opacity="0.1" stroke="#00EA64" stroke-opacity="0.3" stroke-width="0.8"/>
-    <circle cx="8" cy="8.5" r="2.5" fill="#00EA64" filter="url(#glow-meliodas_manus)"/>
-    <text x="16" y="12" fill="#00EA64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3px">
+    <rect x="0" y="0" width="111.0" height="17" rx="8.5" fill="#38BDF8" fill-opacity="0.1" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="0.8"/>
+    <circle cx="8" cy="8.5" r="2.5" fill="#38BDF8" filter="url(#glow-meliodas_manus)"/>
+    <text x="16" y="12" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3px">
       AI ENGINEERING
     </text>
   </g>

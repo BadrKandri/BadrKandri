@@ -75,24 +75,24 @@
 
 <p align="center">
   <a href="https://github.com/BadrKandri/PortNet-Predictive-Modeling">
-    <img src="assets/projects/card_portnet.svg" width="260" alt="PortNet-Predictive-Modeling" />
+    <img src="assets/projects/card_v2_portnet.svg" width="260" alt="PortNet-Predictive-Modeling" />
   </a>
   <a href="https://github.com/BadrKandri/Sofac-commercial-agent">
-    <img src="assets/projects/card_sofac.svg" width="260" alt="Sofac-commercial-agent" />
+    <img src="assets/projects/card_v2_sofac.svg" width="260" alt="Sofac-commercial-agent" />
   </a>
   <a href="https://github.com/BadrKandri/PeaQock_Manus">
-    <img src="assets/projects/card_peaqock_manus.svg" width="260" alt="PeaQock_Manus" />
+    <img src="assets/projects/card_v2_peaqock_manus.svg" width="260" alt="PeaQock_Manus" />
   </a>
 </p>
 <p align="center">
   <a href="https://github.com/BadrKandri/Deep-Learning">
-    <img src="assets/projects/card_deep_learning.svg" width="260" alt="Deep-Learning" />
+    <img src="assets/projects/card_v2_deep_learning.svg" width="260" alt="Deep-Learning" />
   </a>
   <a href="https://github.com/BadrKandri/Machine-Learning">
-    <img src="assets/projects/card_machine_learning.svg" width="260" alt="Machine-Learning" />
+    <img src="assets/projects/card_v2_machine_learning.svg" width="260" alt="Machine-Learning" />
   </a>
   <a href="https://github.com/BadrKandri/100-Days-Of-Code-PYTHON">
-    <img src="assets/projects/card_python_100.svg" width="260" alt="100-Days-Of-Code-PYTHON" />
+    <img src="assets/projects/card_v2_python_100.svg" width="260" alt="100-Days-Of-Code-PYTHON" />
   </a>
 </p>
 
