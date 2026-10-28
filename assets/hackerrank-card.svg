@@ -120,7 +120,7 @@
       <circle cx="28" cy="27" r="13" fill="rgba(245, 158, 11, 0.14)"/>
       <!-- Star icon -->
       <polygon points="28,20 29.8,24 34.2,24.4 30.8,27.3 31.8,31.6 28,29.3 24.2,31.6 25.2,27.3 21.8,24.4 26.2,24" fill="#F59E0B"/>
-      <text x="49" y="34" class="font-stat-num">1</text>
+      <text x="49" y="34" class="font-stat-num">0</text>
       <text x="16" y="58" class="font-stat-lbl">Stars earned</text>
     </g>
 
@@ -164,7 +164,7 @@
                 
                 <!-- Star Rating -->
                 <g transform="translate(450, 10)">
-                    <g transform="translate(0, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="url(#gold-star-grad)" filter="url(#star-glow)"/></g><g transform="translate(18, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g><g transform="translate(36, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g><g transform="translate(54, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g><g transform="translate(72, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g>
+                    <g transform="translate(0, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g><g transform="translate(18, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g><g transform="translate(36, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g><g transform="translate(54, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g><g transform="translate(72, 0)"><polygon points="7,0.5 9,5 13.8,5.4 10.1,8.6 11.2,13.4 7,10.8 2.8,13.4 3.9,8.6 0.2,5.4 5,5" fill="#1E2633" stroke="#2D3748" stroke-width="0.8"/></g>
                 </g>
             </g>
             
@@ -176,7 +176,7 @@
       ⚡ Live HackerRank Telemetry
     </text>
     <text x="552" y="4" text-anchor="end" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
-      Updated 2026-10-27 (UTC)
+      Updated 2026-10-28 (UTC)
     </text>
   </g>
 </svg>
