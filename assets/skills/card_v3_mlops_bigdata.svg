@@ -1,0 +1,139 @@
+<svg width="390" height="182" viewBox="0 0 390 182" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad-mlops_bigdata" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17" />
+      <stop offset="50%" stop-color="#0E1422" />
+      <stop offset="100%" stop-color="#121826" />
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="border-grad-mlops_bigdata" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00EA64" stop-opacity="0.45" />
+      <stop offset="40%" stop-color="#00EA64" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow-mlops_bigdata" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#00EA64" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Card Background -->
+  <rect x="1" y="1" width="388" height="180" rx="14" fill="url(#bg-grad-mlops_bigdata)" stroke="url(#border-grad-mlops_bigdata)" stroke-width="1.2" />
+
+  <!-- Ambient Light Corner Glow -->
+  <circle cx="28" cy="28" r="50" fill="#00EA64" opacity="0.06" />
+
+  <!-- Header: Category Icon + Title -->
+  <g transform="translate(18, 16)">
+    <!-- Category Icon -->
+    <g transform="translate(0, 1)">
+      
+          <rect x="2" y="3" width="16" height="13" rx="2" stroke="#00EA64" stroke-width="1.4" fill="#00EA64" fill-opacity="0.1"/>
+          <path d="M6 7.5L9 9.5L6 11.5" stroke="#00EA64" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 11.5H14" stroke="#00EA64" stroke-width="1.3" stroke-linecap="round"/>
+        
+    </g>
+
+    <!-- Title -->
+    <text x="26" y="14" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" letter-spacing="-0.2px">
+      MLOps &amp; Big Data
+    </text>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="18" y1="45" x2="372" y2="45" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1" />
+
+  <!-- Skill Badges Grid (4 Rows) -->
+  
+            <g transform="translate(18, 58)">
+                <rect x="0" y="0" width="101.19999999999999" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+                    Apache Spark
+                </text>
+            </g>
+            
+            <g transform="translate(127.19999999999999, 58)">
+                <rect x="0" y="0" width="68.19999999999999" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+                    PySpark
+                </text>
+            </g>
+            
+            <g transform="translate(203.39999999999998, 58)">
+                <rect x="0" y="0" width="101.19999999999999" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+                    Apache Kafka
+                </text>
+            </g>
+            
+            <g transform="translate(18, 86)">
+                <rect x="0" y="0" width="61.599999999999994" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+                    Docker
+                </text>
+            </g>
+            
+            <g transform="translate(87.6, 86)">
+                <rect x="0" y="0" width="88.0" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+                    Kubernetes
+                </text>
+            </g>
+            
+            <g transform="translate(183.6, 86)">
+                <rect x="0" y="0" width="101.19999999999999" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+                    Linux (Bash)
+                </text>
+            </g>
+            
+            <g transform="translate(18, 114)">
+                <rect x="0" y="0" width="121.0" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+                    FastAPI (Async)
+                </text>
+            </g>
+            
+            <g transform="translate(147.0, 114)">
+                <rect x="0" y="0" width="41.8" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+                    SQL
+                </text>
+            </g>
+            
+            <g transform="translate(196.8, 114)">
+                <rect x="0" y="0" width="121.0" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+                    MongoDB (NoSQL)
+                </text>
+            </g>
+            
+            <g transform="translate(18, 142)">
+                <rect x="0" y="0" width="127.6" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+                    Hadoop Ecosystem
+                </text>
+            </g>
+            
+            <g transform="translate(153.6, 142)">
+                <rect x="0" y="0" width="121.0" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
+                    CI/CD Pipelines
+                </text>
+            </g>
+            
+</svg>

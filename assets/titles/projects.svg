@@ -18,20 +18,20 @@
   </defs>
 
   <!-- Accent Fading Lines -->
-  <line x1="24" y1="23" x2="261" y2="23" stroke="url(#fade-left-projects)" stroke-width="1.2" stroke-linecap="round"/>
-  <line x1="519" y1="23" x2="756" y2="23" stroke="url(#fade-right-projects)" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="24" y1="23" x2="304" y2="23" stroke="url(#fade-left-projects)" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="476" y1="23" x2="756" y2="23" stroke="url(#fade-right-projects)" stroke-width="1.2" stroke-linecap="round"/>
 
   <!-- Center Capsule -->
-  <rect x="275" y="6" width="230" height="34" rx="17" fill="url(#pill-bg-projects)" stroke="#F97316" stroke-opacity="0.38" stroke-width="1.2"/>
+  <rect x="318" y="6" width="144" height="34" rx="17" fill="url(#pill-bg-projects)" stroke="#F97316" stroke-opacity="0.38" stroke-width="1.2"/>
 
   <!-- Glowing Dot -->
-  <circle cx="293" cy="23" r="3" fill="#F97316" filter="url(#glow-projects)"/>
+  <circle cx="336" cy="23" r="3" fill="#F97316" filter="url(#glow-projects)"/>
 
   <!-- Icon & Text Group -->
-  <g transform="translate(305, 23)">
+  <g transform="translate(348, 23)">
     <path d="M4 11L0 7L4 3M10 3L14 7L10 11" stroke="#F97316" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(0, -7)"/>
     <text x="22" y="4" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1px">
-      FEATURED PROJECTS
+      PROJECTS
     </text>
   </g>
 </svg>

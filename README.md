@@ -16,19 +16,19 @@
   </a>
 </p>
 
-I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in **Information Systems & Big Data**, driven by a passion for bridging theoretical mathematics with scalable production AI. My technical focus centers on architecting **Autonomous Agentic Systems** (LangGraph, Agno, Hybrid RAG with Qdrant), **LLM Fine-Tuning** (PEFT/LoRA), and **Industrial Machine Learning**, from implementing algorithms from first principles in pure NumPy to training models on **5M+ real transactions** ($R^2 = 0.93$) for PortNet. With hands-on experience engineering microservices, streaming pipelines, and AI agents at SOFAC and Peaqock Financials, I am currently seeking an **End-of-Studies Internship (PFE)** in Data Science & AI to deliver impactful, data-driven solutions.
+I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in **Information Systems & Big Data**, driven by a passion for bridging theoretical mathematics with scalable production AI. My technical focus centers on architecting **Autonomous Agentic Systems** (LangGraph, Agno, Hybrid RAG with Qdrant), **LLM Fine-Tuning** (PEFT/LoRA), and **Industrial Machine Learning**, from implementing algorithms from first principles in pure NumPy to training models on **5M+ real transactions** ($R^2 = 0.93$) for PortNet. With hands-on experience engineering microservices, streaming pipelines, and AI agents at SOFAC and Peaqock Financials, I am currently seeking an **End-of-Studies Internship (PFE)** in Data Science & AI Engineering to deliver impactful, data-driven solutions.
 
 <p align="center">
   <img src="assets/titles/title_v1_tech_stack.svg" width="780" alt="Tech Stack &amp; Competencies" />
 </p>
 
 <p align="center">
-  <img src="assets/skills/card_v2_data_science.svg" width="390" alt="Data Science &amp; AI" />
-  <img src="assets/skills/card_v2_mlops_bigdata.svg" width="390" alt="MLOps &amp; Big Data" />
+  <img src="assets/skills/card_v3_data_science.svg" width="390" alt="Data Science &amp; AI Engineering" />
+  <img src="assets/skills/card_v3_mlops_bigdata.svg" width="390" alt="MLOps &amp; Big Data" />
 </p>
 
 <p align="center">
-  <img src="assets/titles/title_v1_projects.svg" width="780" alt="Featured Projects" />
+  <img src="assets/titles/title_v2_projects.svg" width="780" alt="Projects" />
 </p>
 
 <p align="center">

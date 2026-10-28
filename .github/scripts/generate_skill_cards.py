@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 skill_categories = [
     {
         "id": "data_science",
-        "title": "Data Science &amp; AI",
+        "title": "Data Science &amp; AI Engineering",
         "domain_color": "#38BDF8",  # Cyan Blue
         "icon": '''
           <path d="M11 1L12.4 5.2L16.5 6.6L12.4 8L11 12.2L9.6 8L5.5 6.6L9.6 5.2L11 1Z" fill="{color}" fill-opacity="0.25" stroke="{color}" stroke-width="1.3" stroke-linejoin="round"/>
@@ -104,7 +104,7 @@ def render_skill_card(c):
     </g>
 
     <!-- Title -->
-    <text x="26" y="14" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="700" letter-spacing="-0.2px">
+    <text x="26" y="14" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" letter-spacing="-0.2px">
       {c['title']}
     </text>
   </g>
@@ -126,14 +126,13 @@ def main():
         os.makedirs(out_dir, exist_ok=True)
         for c in skill_categories:
             svg_code = render_skill_card(c)
-            # Verify XML parsing
             ET.fromstring(svg_code)
-            for prefix in ["", "card_", "card_v1_", "card_v2_"]:
+            for prefix in ["", "card_", "card_v1_", "card_v2_", "card_v3_"]:
                 file_path = os.path.join(out_dir, f"{prefix}{c['id']}.svg")
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.write(svg_code)
 
-    print("Regenerated clean 2-card Tech Stack successfully without pill/subtitle!")
+    print("Regenerated 2-card Tech Stack (including card_v3_) successfully!")
 
 if __name__ == "__main__":
     main()

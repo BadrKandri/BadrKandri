@@ -1,4 +1,5 @@
 import os
+import xml.etree.ElementTree as ET
 
 titles = [
     {
@@ -17,9 +18,9 @@ titles = [
     },
     {
         "id": "projects",
-        "title": "FEATURED PROJECTS",
+        "title": "PROJECTS",
         "color": "#F97316",  # Orange
-        "pill_w": 230,
+        "pill_w": 144,
         "icon": '''<path d="M4 11L0 7L4 3M10 3L14 7L10 11" stroke="{color}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(0, -7)"/>'''
     },
     {
@@ -90,12 +91,13 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     for t in titles:
         svg_code = render_title_svg(t)
-        for prefix in ["", "title_", "title_v1_"]:
+        ET.fromstring(svg_code)
+        for prefix in ["", "title_", "title_v1_", "title_v2_"]:
             file_path = os.path.join(out_dir, f"{prefix}{t['id']}.svg")
             with open(file_path, "w", encoding="utf-8") as f:
                 f.write(svg_code)
 
-    print("All section title SVGs generated successfully!")
+    print("All section title SVGs (including title_v2_projects.svg) generated successfully!")
 
 if __name__ == "__main__":
     main()
