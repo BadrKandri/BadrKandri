@@ -5,10 +5,12 @@
       <stop offset="100%" stop-color="#121826"/>
     </linearGradient>
     <filter id="glow-gm" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#EA4335" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#EA4335" flood-opacity="0.4"/>
     </filter>
   </defs>
-  <rect x="1" y="1" width="213" height="32" rx="16" fill="url(#bg-gm)" stroke="#EA4335" stroke-opacity="0.4" stroke-width="1.2"/>
+  <rect x="1" y="1" width="213" height="32" rx="16" fill="url(#bg-gm)" stroke="#EA4335" stroke-opacity="0.4" stroke-width="1.2">
+    <animate attributeName="stroke-opacity" values="0.35;0.75;0.35" dur="3s" repeatCount="indefinite"/>
+  </rect>
   <!-- Gmail / Mail Icon -->
   <g transform="translate(14, 9)">
     <rect x="0" y="1" width="16" height="14" rx="2.5" fill="#EA4335" fill-opacity="0.15" stroke="#EA4335" stroke-width="1.2"/>
@@ -19,8 +21,9 @@
     <text x="0" y="0" fill="#EA4335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.4px">DIRECT GMAIL</text>
     <text x="0" y="12" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600">Send Email Now</text>
   </g>
-  <!-- Link Arrow -->
+  <!-- Animated Link Arrow -->
   <g transform="translate(193, 11)">
+    <animateTransform attributeName="transform" type="translate" values="193 11; 196 11; 193 11" dur="2s" repeatCount="indefinite"/>
     <path d="M1 9L9 1M9 1H3M9 1V7" stroke="#64748B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 </svg>

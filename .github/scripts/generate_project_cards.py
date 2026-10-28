@@ -1,4 +1,5 @@
 import os
+import xml.etree.ElementTree as ET
 
 projects = [
     {
@@ -95,24 +96,28 @@ def render_project_card(p):
 
     <!-- Border Gradient with accent touch -->
     <linearGradient id="border-grad-{p['id']}" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="{dom_color}" stop-opacity="0.4" />
-      <stop offset="40%" stop-color="{dom_color}" stop-opacity="0.12" />
+      <stop offset="0%" stop-color="{dom_color}" stop-opacity="0.45" />
+      <stop offset="40%" stop-color="{dom_color}" stop-opacity="0.15" />
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
     </linearGradient>
 
     <!-- Glow Filter -->
     <filter id="glow-{p['id']}" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="{dom_color}" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="{dom_color}" flood-opacity="0.45"/>
     </filter>
   </defs>
 
-  <!-- Card Background -->
-  <rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="14" fill="url(#bg-grad-{p['id']})" stroke="url(#border-grad-{p['id']})" stroke-width="1.2" />
+  <!-- Card Background with Breathing Border -->
+  <rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="14" fill="url(#bg-grad-{p['id']})" stroke="url(#border-grad-{p['id']})" stroke-width="1.2">
+    <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="4s" repeatCount="indefinite"/>
+  </rect>
 
-  <!-- Ambient Light Corner Glow -->
-  <circle cx="25" cy="25" r="45" fill="{dom_color}" opacity="0.06" />
+  <!-- Ambient Light Corner Glow with Breathing -->
+  <circle cx="25" cy="25" r="45" fill="{dom_color}" opacity="0.06">
+    <animate attributeName="opacity" values="0.04;0.11;0.04" dur="4s" repeatCount="indefinite"/>
+  </circle>
 
-  <!-- Header: Icon + Title + External Link Icon -->
+  <!-- Header: Icon + Title -->
   <g transform="translate(16, 16)">
     <!-- Repo Book Icon -->
     <g transform="translate(0, 1)">
@@ -124,33 +129,34 @@ def render_project_card(p):
     <text x="22" y="12" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" letter-spacing="-0.2px">
       {display_title}
     </text>
-
-    <!-- External Link Arrow -->
-    <g transform="translate({width - 32 - 14}, 2)">
-      <path d="M1 9L9 1M9 1H3M9 1V7" stroke="#64748B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
   </g>
 
-  <!-- Domain Tag / Category Pill -->
+  <!-- Domain Tag / Category Pill with Radar Beacon Animation -->
   <g transform="translate(16, 38)">
     <rect x="0" y="0" width="{len(p['domain']) * 6.5 + 20}" height="17" rx="8.5" fill="{dom_color}" fill-opacity="0.1" stroke="{dom_color}" stroke-opacity="0.3" stroke-width="0.8"/>
-    <circle cx="8" cy="8.5" r="2.5" fill="{dom_color}" filter="url(#glow-{p['id']})"/>
+    <!-- Outer Radar Pulse -->
+    <circle cx="8" cy="8.5" r="2.5" fill="none" stroke="{dom_color}" stroke-width="0.8">
+      <animate attributeName="r" values="2.5;6.5" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.75;0" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Core Dot -->
+    <circle cx="8" cy="8.5" r="2.5" fill="{dom_color}" filter="url(#glow-{p['id']})">
+      <animate attributeName="r" values="2.5;3.1;2.5" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
     <text x="16" y="12" fill="{dom_color}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3px">
       {p['domain'].upper()}
     </text>
   </g>
 
-  <!-- Description (2 lines) -->
-  <g transform="translate(16, 68)">
-    <text x="0" y="0" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="400">
-      {p['desc_line1']}
-    </text>
-    <text x="0" y="15" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="400">
-      {p['desc_line2']}
-    </text>
-  </g>
+  <!-- Project Description (2 Lines) -->
+  <text x="16" y="73" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400">
+    {p['desc_line1']}
+  </text>
+  <text x="16" y="89" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400">
+    {p['desc_line2']}
+  </text>
 
-  <!-- Footer Tags -->
+  <!-- Tech Tags -->
   {tags_content}
 </svg>
 '''
@@ -158,28 +164,19 @@ def render_project_card(p):
 
 def main():
     target_dirs = [
-        "C:/Users/MELIODAS/.gemini/antigravity/scratch/BadrKandri/assets/projects"
+        "assets/projects"
     ]
     for out_dir in target_dirs:
         os.makedirs(out_dir, exist_ok=True)
         for p in projects:
             svg_code = render_project_card(p)
-            # Write base, card_, and card_v2_ formats for full compatibility and instant cache busting
-            for prefix in ["", "card_", "card_v2_"]:
+            ET.fromstring(svg_code)
+            for prefix in ["", "card_", "card_v1_", "card_v2_"]:
                 file_path = os.path.join(out_dir, f"{prefix}{p['id']}.svg")
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.write(svg_code)
 
-        # Also write legacy meliodas_manus aliases
-        p_manus = dict(projects[2])
-        p_manus["id"] = "meliodas_manus"
-        p_manus["title"] = "meliodas_manus"
-        svg_meliodas = render_project_card(p_manus)
-        for prefix in ["", "card_", "card_v2_"]:
-            with open(os.path.join(out_dir, f"{prefix}meliodas_manus.svg"), "w", encoding="utf-8") as f:
-                f.write(svg_meliodas)
-
-    print("Regenerated all project cards with new color logic successfully!")
+    print("Regenerated all 6 project cards with animations successfully!")
 
 if __name__ == "__main__":
     main()

@@ -46,35 +46,60 @@ def render_title_svg(t):
     pill_w = t["pill_w"]
     pill_x = int((width - pill_w) / 2)
     icon_svg = t["icon"].replace("{color}", color)
+    left_end = pill_x - 14
+    right_start = pill_x + pill_w + 14
 
     svg = f'''<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="fade-left-{t['id']}" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="{color}" stop-opacity="0"/>
-      <stop offset="100%" stop-color="{color}" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="{color}" stop-opacity="0.38"/>
     </linearGradient>
     <linearGradient id="fade-right-{t['id']}" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="{color}" stop-opacity="0.35"/>
+      <stop offset="0%" stop-color="{color}" stop-opacity="0.38"/>
       <stop offset="100%" stop-color="{color}" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="pill-bg-{t['id']}" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0A0E17"/>
       <stop offset="100%" stop-color="#121826"/>
     </linearGradient>
-    <filter id="glow-{t['id']}" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="{color}" flood-opacity="0.45"/>
+    <filter id="glow-{t['id']}" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="{color}" flood-opacity="0.55"/>
+    </filter>
+    <filter id="comet-{t['id']}" x="-100%" y="-100%" width="300%" height="300%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="{color}" flood-opacity="0.85"/>
     </filter>
   </defs>
 
   <!-- Accent Fading Lines -->
-  <line x1="24" y1="23" x2="{pill_x - 14}" y2="23" stroke="url(#fade-left-{t['id']})" stroke-width="1.2" stroke-linecap="round"/>
-  <line x1="{pill_x + pill_w + 14}" y1="23" x2="756" y2="23" stroke="url(#fade-right-{t['id']})" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="24" y1="23" x2="{left_end}" y2="23" stroke="url(#fade-left-{t['id']})" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="{right_start}" y1="23" x2="756" y2="23" stroke="url(#fade-right-{t['id']})" stroke-width="1.2" stroke-linecap="round"/>
 
-  <!-- Center Capsule -->
-  <rect x="{pill_x}" y="6" width="{pill_w}" height="34" rx="17" fill="url(#pill-bg-{t['id']})" stroke="{color}" stroke-opacity="0.38" stroke-width="1.2"/>
+  <!-- Inward Traveling Energy Stream (Left -> Capsule) -->
+  <circle cy="23" r="2" fill="{color}" filter="url(#comet-{t['id']})">
+    <animate attributeName="cx" values="24;{left_end}" dur="2.5s" repeatCount="indefinite" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.5s" repeatCount="indefinite" keyTimes="0;0.2;0.8;1"/>
+  </circle>
 
-  <!-- Glowing Dot -->
-  <circle cx="{pill_x + 18}" cy="23" r="3" fill="{color}" filter="url(#glow-{t['id']})"/>
+  <!-- Inward Traveling Energy Stream (Right -> Capsule) -->
+  <circle cy="23" r="2" fill="{color}" filter="url(#comet-{t['id']})">
+    <animate attributeName="cx" values="756;{right_start}" dur="2.5s" repeatCount="indefinite" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.5s" repeatCount="indefinite" keyTimes="0;0.2;0.8;1"/>
+  </circle>
+
+  <!-- Center Capsule with Breathing Border -->
+  <rect x="{pill_x}" y="6" width="{pill_w}" height="34" rx="17" fill="url(#pill-bg-{t['id']})" stroke="{color}" stroke-opacity="0.38" stroke-width="1.2">
+    <animate attributeName="stroke-opacity" values="0.3;0.65;0.3" dur="3.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Glowing Radar Beacon Dot -->
+  <circle cx="{pill_x + 18}" cy="23" r="3" fill="none" stroke="{color}" stroke-width="0.8">
+    <animate attributeName="r" values="3;8" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.75;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="{pill_x + 18}" cy="23" r="3" fill="{color}" filter="url(#glow-{t['id']})">
+    <animate attributeName="r" values="3;3.6;3" dur="2s" repeatCount="indefinite"/>
+  </circle>
 
   <!-- Icon & Text Group -->
   <g transform="translate({pill_x + 30}, 23)">
@@ -87,7 +112,7 @@ def render_title_svg(t):
     return svg
 
 def main():
-    out_dir = "C:/Users/MELIODAS/.gemini/antigravity/scratch/BadrKandri/assets/titles"
+    out_dir = "assets/titles"
     os.makedirs(out_dir, exist_ok=True)
     for t in titles:
         svg_code = render_title_svg(t)
@@ -97,7 +122,7 @@ def main():
             with open(file_path, "w", encoding="utf-8") as f:
                 f.write(svg_code)
 
-    print("All section title SVGs (including title_v2_projects.svg) generated successfully!")
+    print("All section title SVGs regenerated with animations successfully!")
 
 if __name__ == "__main__":
     main()

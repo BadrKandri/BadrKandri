@@ -7,10 +7,12 @@
       <stop offset="100%" stop-color="#121826" />
     </linearGradient>
 
-    <!-- Border Gradient -->
+    <!-- Animated Border Gradient -->
     <linearGradient id="border-grad-mlops_bigdata" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00EA64" stop-opacity="0.45" />
-      <stop offset="40%" stop-color="#00EA64" stop-opacity="0.12" />
+      <stop offset="0%" stop-color="#00EA64" stop-opacity="0.5">
+        <animate attributeName="stop-opacity" values="0.35;0.65;0.35" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="40%" stop-color="#00EA64" stop-opacity="0.15" />
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
     </linearGradient>
 
@@ -23,8 +25,10 @@
   <!-- Card Background -->
   <rect x="1" y="1" width="388" height="180" rx="14" fill="url(#bg-grad-mlops_bigdata)" stroke="url(#border-grad-mlops_bigdata)" stroke-width="1.2" />
 
-  <!-- Ambient Light Corner Glow -->
-  <circle cx="28" cy="28" r="50" fill="#00EA64" opacity="0.06" />
+  <!-- Ambient Light Corner Glow with Breathing -->
+  <circle cx="28" cy="28" r="50" fill="#00EA64" opacity="0.06">
+    <animate attributeName="opacity" values="0.04;0.10;0.04" dur="4s" repeatCount="indefinite"/>
+  </circle>
 
   <!-- Header: Category Icon + Title -->
   <g transform="translate(18, 16)">
@@ -50,7 +54,9 @@
   
             <g transform="translate(18, 58)">
                 <rect x="0" y="0" width="101.19999999999999" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="0.0s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     Apache Spark
                 </text>
@@ -58,7 +64,9 @@
             
             <g transform="translate(127.19999999999999, 58)">
                 <rect x="0" y="0" width="68.19999999999999" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="0.3s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     PySpark
                 </text>
@@ -66,7 +74,9 @@
             
             <g transform="translate(203.39999999999998, 58)">
                 <rect x="0" y="0" width="101.19999999999999" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="0.6s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     Apache Kafka
                 </text>
@@ -74,7 +84,9 @@
             
             <g transform="translate(18, 86)">
                 <rect x="0" y="0" width="61.599999999999994" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="0.4s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     Docker
                 </text>
@@ -82,7 +94,9 @@
             
             <g transform="translate(87.6, 86)">
                 <rect x="0" y="0" width="88.0" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="0.7s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     Kubernetes
                 </text>
@@ -90,7 +104,9 @@
             
             <g transform="translate(183.6, 86)">
                 <rect x="0" y="0" width="101.19999999999999" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="1.0s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     Linux (Bash)
                 </text>
@@ -98,7 +114,9 @@
             
             <g transform="translate(18, 114)">
                 <rect x="0" y="0" width="121.0" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="0.8s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     FastAPI (Async)
                 </text>
@@ -106,7 +124,9 @@
             
             <g transform="translate(147.0, 114)">
                 <rect x="0" y="0" width="41.8" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="1.1s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     SQL
                 </text>
@@ -114,7 +134,9 @@
             
             <g transform="translate(196.8, 114)">
                 <rect x="0" y="0" width="121.0" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="1.4s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     MongoDB (NoSQL)
                 </text>
@@ -122,7 +144,9 @@
             
             <g transform="translate(18, 142)">
                 <rect x="0" y="0" width="127.6" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="1.2s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     Hadoop Ecosystem
                 </text>
@@ -130,7 +154,9 @@
             
             <g transform="translate(153.6, 142)">
                 <rect x="0" y="0" width="121.0" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="#00EA64" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="#00EA64">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="1.5s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     CI/CD Pipelines
                 </text>

@@ -2,18 +2,21 @@
   <defs>
     <linearGradient id="fade-left-projects" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#F97316" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#F97316" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0.38"/>
     </linearGradient>
     <linearGradient id="fade-right-projects" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F97316" stop-opacity="0.35"/>
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.38"/>
       <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="pill-bg-projects" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0A0E17"/>
       <stop offset="100%" stop-color="#121826"/>
     </linearGradient>
-    <filter id="glow-projects" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#F97316" flood-opacity="0.45"/>
+    <filter id="glow-projects" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#F97316" flood-opacity="0.55"/>
+    </filter>
+    <filter id="comet-projects" x="-100%" y="-100%" width="300%" height="300%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#F97316" flood-opacity="0.85"/>
     </filter>
   </defs>
 
@@ -21,11 +24,31 @@
   <line x1="24" y1="23" x2="304" y2="23" stroke="url(#fade-left-projects)" stroke-width="1.2" stroke-linecap="round"/>
   <line x1="476" y1="23" x2="756" y2="23" stroke="url(#fade-right-projects)" stroke-width="1.2" stroke-linecap="round"/>
 
-  <!-- Center Capsule -->
-  <rect x="318" y="6" width="144" height="34" rx="17" fill="url(#pill-bg-projects)" stroke="#F97316" stroke-opacity="0.38" stroke-width="1.2"/>
+  <!-- Inward Traveling Energy Stream (Left -> Capsule) -->
+  <circle cy="23" r="2" fill="#F97316" filter="url(#comet-projects)">
+    <animate attributeName="cx" values="24;304" dur="2.5s" repeatCount="indefinite" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.5s" repeatCount="indefinite" keyTimes="0;0.2;0.8;1"/>
+  </circle>
 
-  <!-- Glowing Dot -->
-  <circle cx="336" cy="23" r="3" fill="#F97316" filter="url(#glow-projects)"/>
+  <!-- Inward Traveling Energy Stream (Right -> Capsule) -->
+  <circle cy="23" r="2" fill="#F97316" filter="url(#comet-projects)">
+    <animate attributeName="cx" values="756;476" dur="2.5s" repeatCount="indefinite" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.5s" repeatCount="indefinite" keyTimes="0;0.2;0.8;1"/>
+  </circle>
+
+  <!-- Center Capsule with Breathing Border -->
+  <rect x="318" y="6" width="144" height="34" rx="17" fill="url(#pill-bg-projects)" stroke="#F97316" stroke-opacity="0.38" stroke-width="1.2">
+    <animate attributeName="stroke-opacity" values="0.3;0.65;0.3" dur="3.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Glowing Radar Beacon Dot -->
+  <circle cx="336" cy="23" r="3" fill="none" stroke="#F97316" stroke-width="0.8">
+    <animate attributeName="r" values="3;8" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.75;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="336" cy="23" r="3" fill="#F97316" filter="url(#glow-projects)">
+    <animate attributeName="r" values="3;3.6;3" dur="2s" repeatCount="indefinite"/>
+  </circle>
 
   <!-- Icon & Text Group -->
   <g transform="translate(348, 23)">

@@ -191,11 +191,15 @@ def generate_svg(data):
     .font-sec-hdr {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif; font-size: 10px; font-weight: 700; fill: #64748B; letter-spacing: 1.2px; }}
   </style>
 
-  <!-- Main Card Container -->
-  <rect x="1" y="1" width="{card_width - 2}" height="{card_height - 2}" rx="16" fill="url(#bg-grad)" stroke="url(#card-border)" stroke-width="1.5" />
+  <!-- Main Card Container with Breathing Border -->
+  <rect x="1" y="1" width="{card_width - 2}" height="{card_height - 2}" rx="16" fill="url(#bg-grad)" stroke="url(#card-border)" stroke-width="1.5">
+    <animate attributeName="stroke-opacity" values="0.4;0.75;0.4" dur="4s" repeatCount="indefinite"/>
+  </rect>
 
-  <!-- Ambient Glow top left -->
-  <ellipse cx="65" cy="55" rx="100" ry="75" fill="#00EA64" opacity="0.07" />
+  <!-- Ambient Glow top left with Breathing -->
+  <ellipse cx="65" cy="55" rx="100" ry="75" fill="#00EA64" opacity="0.07">
+    <animate attributeName="opacity" values="0.04;0.10;0.04" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
 
   <!-- HEADER -->
   <g transform="translate(24, 22)">
@@ -213,10 +217,17 @@ def generate_svg(data):
       <tspan fill="#94A3B8">{country}</tspan>
     </text>
 
-    <!-- Level Pill (Top Right) -->
+    <!-- Level Pill (Top Right) with Radar Beacon Animation -->
     <g transform="translate({card_width - 48 - 88}, 5)">
       <rect x="0" y="0" width="88" height="27" rx="13.5" fill="rgba(0, 234, 100, 0.12)" stroke="rgba(0, 234, 100, 0.35)" stroke-width="1"/>
-      <circle cx="15" cy="13.5" r="3.5" fill="#00EA64" filter="url(#glow-00EA64)"/>
+      <!-- Radar Pulse -->
+      <circle cx="15" cy="13.5" r="3.5" fill="none" stroke="#00EA64" stroke-width="0.8">
+        <animate attributeName="r" values="3.5;8" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="15" cy="13.5" r="3.5" fill="#00EA64" filter="url(#glow-00EA64)">
+        <animate attributeName="r" values="3.5;4.2;3.5" dur="2s" repeatCount="indefinite"/>
+      </circle>
       <text x="25" y="17.5" fill="#00EA64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="0.5px">
         LEVEL {level}
       </text>
@@ -389,7 +400,11 @@ def main():
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
 
-    print(f"Successfully generated card at: {output_path}")
+    dash_path = "assets/hackerrank-dashboard.svg"
+    with open(dash_path, "w", encoding="utf-8") as f:
+        f.write(svg_content)
+
+    print(f"Successfully generated cards at: {output_path} and {dash_path}")
 
 if __name__ == "__main__":
     main()

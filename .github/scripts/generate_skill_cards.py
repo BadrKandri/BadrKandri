@@ -42,7 +42,7 @@ def render_skill_card(c):
     dom_color = c["domain_color"]
     icon_svg = c["icon"].replace("{color}", dom_color)
 
-    # Render pill rows (4 rows)
+    # Render pill rows (4 rows) with staggered dot twinkling
     rows_svg = []
     y_start = 58
     row_height = 28
@@ -51,13 +51,17 @@ def render_skill_card(c):
         y = y_start + r_idx * row_height
         x = 18
         row_items = []
-        for item in row:
+        for i_idx, item in enumerate(row):
             clean_item = item.replace("&amp;", "&")
             item_w = len(clean_item) * 6.6 + 22
+            # Staggered twinkle timing
+            delay = round((r_idx * 0.4 + i_idx * 0.3) % 2.4, 2)
             row_items.append(f'''
             <g transform="translate({x}, {y})">
                 <rect x="0" y="0" width="{item_w}" height="22" rx="11" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.8"/>
-                <circle cx="8" cy="11" r="2.2" fill="{dom_color}" opacity="0.85"/>
+                <circle cx="8" cy="11" r="2.2" fill="{dom_color}">
+                    <animate attributeName="opacity" values="0.45;1;0.45" begin="{delay}s" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
                 <text x="16" y="14.8" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
                     {item}
                 </text>
@@ -77,10 +81,12 @@ def render_skill_card(c):
       <stop offset="100%" stop-color="#121826" />
     </linearGradient>
 
-    <!-- Border Gradient -->
+    <!-- Animated Border Gradient -->
     <linearGradient id="border-grad-{c['id']}" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="{dom_color}" stop-opacity="0.45" />
-      <stop offset="40%" stop-color="{dom_color}" stop-opacity="0.12" />
+      <stop offset="0%" stop-color="{dom_color}" stop-opacity="0.5">
+        <animate attributeName="stop-opacity" values="0.35;0.65;0.35" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="40%" stop-color="{dom_color}" stop-opacity="0.15" />
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
     </linearGradient>
 
@@ -93,8 +99,10 @@ def render_skill_card(c):
   <!-- Card Background -->
   <rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="14" fill="url(#bg-grad-{c['id']})" stroke="url(#border-grad-{c['id']})" stroke-width="1.2" />
 
-  <!-- Ambient Light Corner Glow -->
-  <circle cx="28" cy="28" r="50" fill="{dom_color}" opacity="0.06" />
+  <!-- Ambient Light Corner Glow with Breathing -->
+  <circle cx="28" cy="28" r="50" fill="{dom_color}" opacity="0.06">
+    <animate attributeName="opacity" values="0.04;0.10;0.04" dur="4s" repeatCount="indefinite"/>
+  </circle>
 
   <!-- Header: Category Icon + Title -->
   <g transform="translate(18, 16)">
@@ -120,7 +128,7 @@ def render_skill_card(c):
 
 def main():
     target_dirs = [
-        "C:/Users/MELIODAS/.gemini/antigravity/scratch/BadrKandri/assets/skills"
+        "assets/skills"
     ]
     for out_dir in target_dirs:
         os.makedirs(out_dir, exist_ok=True)
@@ -132,7 +140,7 @@ def main():
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.write(svg_code)
 
-    print("Regenerated 2-card Tech Stack (including card_v3_) successfully!")
+    print("Regenerated 2-card Tech Stack with twinkling constellations successfully!")
 
 if __name__ == "__main__":
     main()

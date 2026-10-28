@@ -2,18 +2,21 @@
   <defs>
     <linearGradient id="fade-left-neetcode" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#A855F7" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.38"/>
     </linearGradient>
     <linearGradient id="fade-right-neetcode" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.35"/>
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.38"/>
       <stop offset="100%" stop-color="#A855F7" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="pill-bg-neetcode" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0A0E17"/>
       <stop offset="100%" stop-color="#121826"/>
     </linearGradient>
-    <filter id="glow-neetcode" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#A855F7" flood-opacity="0.45"/>
+    <filter id="glow-neetcode" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#A855F7" flood-opacity="0.55"/>
+    </filter>
+    <filter id="comet-neetcode" x="-100%" y="-100%" width="300%" height="300%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#A855F7" flood-opacity="0.85"/>
     </filter>
   </defs>
 
@@ -21,11 +24,31 @@
   <line x1="24" y1="23" x2="250" y2="23" stroke="url(#fade-left-neetcode)" stroke-width="1.2" stroke-linecap="round"/>
   <line x1="530" y1="23" x2="756" y2="23" stroke="url(#fade-right-neetcode)" stroke-width="1.2" stroke-linecap="round"/>
 
-  <!-- Center Capsule -->
-  <rect x="264" y="6" width="252" height="34" rx="17" fill="url(#pill-bg-neetcode)" stroke="#A855F7" stroke-opacity="0.38" stroke-width="1.2"/>
+  <!-- Inward Traveling Energy Stream (Left -> Capsule) -->
+  <circle cy="23" r="2" fill="#A855F7" filter="url(#comet-neetcode)">
+    <animate attributeName="cx" values="24;250" dur="2.5s" repeatCount="indefinite" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.5s" repeatCount="indefinite" keyTimes="0;0.2;0.8;1"/>
+  </circle>
 
-  <!-- Glowing Dot -->
-  <circle cx="282" cy="23" r="3" fill="#A855F7" filter="url(#glow-neetcode)"/>
+  <!-- Inward Traveling Energy Stream (Right -> Capsule) -->
+  <circle cy="23" r="2" fill="#A855F7" filter="url(#comet-neetcode)">
+    <animate attributeName="cx" values="756;530" dur="2.5s" repeatCount="indefinite" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.5s" repeatCount="indefinite" keyTimes="0;0.2;0.8;1"/>
+  </circle>
+
+  <!-- Center Capsule with Breathing Border -->
+  <rect x="264" y="6" width="252" height="34" rx="17" fill="url(#pill-bg-neetcode)" stroke="#A855F7" stroke-opacity="0.38" stroke-width="1.2">
+    <animate attributeName="stroke-opacity" values="0.3;0.65;0.3" dur="3.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Glowing Radar Beacon Dot -->
+  <circle cx="282" cy="23" r="3" fill="none" stroke="#A855F7" stroke-width="0.8">
+    <animate attributeName="r" values="3;8" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.75;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="282" cy="23" r="3" fill="#A855F7" filter="url(#glow-neetcode)">
+    <animate attributeName="r" values="3;3.6;3" dur="2s" repeatCount="indefinite"/>
+  </circle>
 
   <!-- Icon & Text Group -->
   <g transform="translate(294, 23)">

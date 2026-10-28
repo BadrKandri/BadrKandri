@@ -1,0 +1,95 @@
+<svg width="295" height="136" viewBox="0 0 295 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient matching HackerRank card -->
+    <linearGradient id="bg-grad-sofac" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17" />
+      <stop offset="50%" stop-color="#0E1422" />
+      <stop offset="100%" stop-color="#121826" />
+    </linearGradient>
+
+    <!-- Border Gradient with accent touch -->
+    <linearGradient id="border-grad-sofac" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.45" />
+      <stop offset="40%" stop-color="#38BDF8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow-sofac" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#38BDF8" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Card Background with Breathing Border -->
+  <rect x="1" y="1" width="293" height="134" rx="14" fill="url(#bg-grad-sofac)" stroke="url(#border-grad-sofac)" stroke-width="1.2">
+    <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Ambient Light Corner Glow with Breathing -->
+  <circle cx="25" cy="25" r="45" fill="#38BDF8" opacity="0.06">
+    <animate attributeName="opacity" values="0.04;0.11;0.04" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Header: Icon + Title -->
+  <g transform="translate(16, 16)">
+    <!-- Repo Book Icon -->
+    <g transform="translate(0, 1)">
+      <path d="M2 1.5C2 0.67 2.67 0 3.5 0H12.5C13.33 0 14 0.67 14 1.5V12C14 12.83 13.33 13.5 12.5 13.5H3.5C2.67 13.5 2 12.83 2 12V1.5Z" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+      <path d="M5 4H11M5 7H9" stroke="#38BDF8" stroke-width="1.3" stroke-linecap="round"/>
+    </g>
+
+    <!-- Title -->
+    <text x="22" y="12" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" letter-spacing="-0.2px">
+      Sofac-commercial-a..
+    </text>
+  </g>
+
+  <!-- Domain Tag / Category Pill with Radar Beacon Animation -->
+  <g transform="translate(16, 38)">
+    <rect x="0" y="0" width="111.0" height="17" rx="8.5" fill="#38BDF8" fill-opacity="0.1" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="0.8"/>
+    <!-- Outer Radar Pulse -->
+    <circle cx="8" cy="8.5" r="2.5" fill="none" stroke="#38BDF8" stroke-width="0.8">
+      <animate attributeName="r" values="2.5;6.5" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.75;0" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Core Dot -->
+    <circle cx="8" cy="8.5" r="2.5" fill="#38BDF8" filter="url(#glow-sofac)">
+      <animate attributeName="r" values="2.5;3.1;2.5" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="16" y="12" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3px">
+      AI ENGINEERING
+    </text>
+  </g>
+
+  <!-- Project Description (2 Lines) -->
+  <text x="16" y="73" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400">
+    Commercial intelligent agent for automated
+  </text>
+  <text x="16" y="89" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="400">
+    customer interaction and process workflows.
+  </text>
+
+  <!-- Tech Tags -->
+  
+        <g transform="translate(16, 104)">
+            <rect x="0" y="0" width="53.0" height="18" rx="9" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="0.8"/>
+            <text x="26.5" y="12.5" text-anchor="middle" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
+                Python
+            </text>
+        </g>
+        
+        <g transform="translate(75.0, 104)">
+            <rect x="0" y="0" width="40.0" height="18" rx="9" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="0.8"/>
+            <text x="20.0" y="12.5" text-anchor="middle" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
+                LLMs
+            </text>
+        </g>
+        
+        <g transform="translate(121.0, 104)">
+            <rect x="0" y="0" width="79.0" height="18" rx="9" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.06)" stroke-width="0.8"/>
+            <text x="39.5" y="12.5" text-anchor="middle" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
+                Automation
+            </text>
+        </g>
+        
+</svg>
