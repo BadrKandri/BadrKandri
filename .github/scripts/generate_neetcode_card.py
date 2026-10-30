@@ -4,7 +4,17 @@ import urllib.request
 import urllib.error
 import xml.etree.ElementTree as ET
 
-# Full mapping of NeetCode 150 problem slugs to category & difficulty
+# 6 Core Roadmap Nodes and their metadata
+CORE_CATEGORIES = [
+    {"name": "Arrays & Hashing", "total": 9, "easy": 3, "medium": 6, "hard": 0},
+    {"name": "Two Pointers", "total": 5, "easy": 1, "medium": 3, "hard": 1},
+    {"name": "Stack", "total": 7, "easy": 1, "medium": 5, "hard": 1},
+    {"name": "Binary Search", "total": 7, "easy": 1, "medium": 5, "hard": 1},
+    {"name": "Sliding Window", "total": 6, "easy": 1, "medium": 3, "hard": 2},
+    {"name": "Linked List", "total": 11, "easy": 3, "medium": 6, "hard": 2},
+]
+
+# Slug to (category, difficulty, problem_name)
 NEETCODE_150_MAP = {
     # Arrays & Hashing (9)
     "duplicate-integer": ("Arrays & Hashing", "Easy", "Contains Duplicate"),
@@ -62,135 +72,6 @@ NEETCODE_150_MAP = {
     "lru-cache": ("Linked List", "Medium", "LRU Cache"),
     "merge-k-sorted-linked-lists": ("Linked List", "Hard", "Merge K Sorted Lists"),
     "reverse-nodes-in-k-group": ("Linked List", "Hard", "Reverse Nodes In K Group"),
-
-    # Trees (15)
-    "invert-a-binary-tree": ("Trees", "Easy", "Invert Binary Tree"),
-    "depth-of-binary-tree": ("Trees", "Easy", "Maximum Depth of Binary Tree"),
-    "binary-tree-diameter": ("Trees", "Easy", "Diameter of Binary Tree"),
-    "balanced-binary-tree": ("Trees", "Easy", "Balanced Binary Tree"),
-    "same-binary-tree": ("Trees", "Easy", "Same Tree"),
-    "subtree-of-a-binary-tree": ("Trees", "Easy", "Subtree of Another Tree"),
-    "lowest-common-ancestor-in-binary-search-tree": ("Trees", "Medium", "Lowest Common Ancestor of a BST"),
-    "level-order-traversal-of-binary-tree": ("Trees", "Medium", "Binary Tree Level Order Traversal"),
-    "binary-tree-right-side-view": ("Trees", "Medium", "Binary Tree Right Side View"),
-    "count-good-nodes-in-binary-tree": ("Trees", "Medium", "Count Good Nodes In Binary Tree"),
-    "valid-binary-search-tree": ("Trees", "Medium", "Validate Binary Search Tree"),
-    "kth-smallest-integer-in-bst": ("Trees", "Medium", "Kth Smallest Element In a BST"),
-    "construct-binary-tree-from-preorder-and-inorder-traversal": ("Trees", "Medium", "Construct Binary Tree From Preorder & Inorder"),
-    "binary-tree-maximum-path-sum": ("Trees", "Hard", "Binary Tree Maximum Path Sum"),
-    "serialize-and-deserialize-binary-tree": ("Trees", "Hard", "Serialize And Deserialize Binary Tree"),
-
-    # Heap / Priority Queue (7)
-    "kth-largest-integer-in-a-stream": ("Heap / Priority Queue", "Easy", "Kth Largest Element In a Stream"),
-    "last-stone-weight": ("Heap / Priority Queue", "Easy", "Last Stone Weight"),
-    "k-closest-points-to-origin": ("Heap / Priority Queue", "Medium", "K Closest Points to Origin"),
-    "kth-largest-element-in-an-array": ("Heap / Priority Queue", "Medium", "Kth Largest Element In An Array"),
-    "task-scheduler": ("Heap / Priority Queue", "Medium", "Task Scheduler"),
-    "design-twitter-feed": ("Heap / Priority Queue", "Medium", "Design Twitter"),
-    "find-median-in-a-data-stream": ("Heap / Priority Queue", "Hard", "Find Median From Data Stream"),
-
-    # Backtracking (9)
-    "subsets": ("Backtracking", "Medium", "Subsets"),
-    "combination-target-sum": ("Backtracking", "Medium", "Combination Sum"),
-    "combination-target-sum-ii": ("Backtracking", "Medium", "Combination Sum II"),
-    "permutations": ("Backtracking", "Medium", "Permutations"),
-    "subsets-ii": ("Backtracking", "Medium", "Subsets II"),
-    "search-for-word": ("Backtracking", "Medium", "Word Search"),
-    "palindrome-partitioning": ("Backtracking", "Medium", "Palindrome Partitioning"),
-    "combinations-of-a-phone-number": ("Backtracking", "Medium", "Letter Combinations of a Phone Number"),
-    "n-queens": ("Backtracking", "Hard", "N-Queens"),
-
-    # Tries (3)
-    "implement-prefix-tree": ("Tries", "Medium", "Implement Trie Prefix Tree"),
-    "design-add-and-search-words-data-structure": ("Tries", "Medium", "Design Add And Search Words"),
-    "word-search-ii": ("Tries", "Hard", "Word Search II"),
-
-    # Graphs (13)
-    "count-number-of-islands": ("Graphs", "Medium", "Number of Islands"),
-    "max-area-of-island": ("Graphs", "Medium", "Max Area of Island"),
-    "clone-graph": ("Graphs", "Medium", "Clone Graph"),
-    "islands-and-treasure": ("Graphs", "Medium", "Walls and Gates"),
-    "rotting-fruit": ("Graphs", "Medium", "Rotting Oranges"),
-    "pacific-atlantic-water-flow": ("Graphs", "Medium", "Pacific Atlantic Water Flow"),
-    "surrounded-regions": ("Graphs", "Medium", "Surrounded Regions"),
-    "course-schedule": ("Graphs", "Medium", "Course Schedule"),
-    "course-schedule-ii": ("Graphs", "Medium", "Course Schedule II"),
-    "graph-valid-tree": ("Graphs", "Medium", "Graph Valid Tree"),
-    "number-of-connected-components-in-an-undirected-graph": ("Graphs", "Medium", "Connected Components in Graph"),
-    "redundant-connection": ("Graphs", "Medium", "Redundant Connection"),
-    "word-ladder": ("Graphs", "Hard", "Word Ladder"),
-
-    # Advanced Graphs (6)
-    "reconstruct-flight-path": ("Advanced Graphs", "Hard", "Reconstruct Itinerary"),
-    "min-cost-to-connect-points": ("Advanced Graphs", "Medium", "Min Cost to Connect All Points"),
-    "network-delay-time": ("Advanced Graphs", "Medium", "Network Delay Time"),
-    "swim-in-rising-water": ("Advanced Graphs", "Hard", "Swim In Rising Water"),
-    "alien-dictionary": ("Advanced Graphs", "Hard", "Alien Dictionary"),
-    "cheapest-flights-within-k-stops": ("Advanced Graphs", "Medium", "Cheapest Flights Within K Stops"),
-
-    # 1-D Dynamic Prog (12)
-    "climbing-stairs": ("1-D Dynamic Prog", "Easy", "Climbing Stairs"),
-    "min-cost-climbing-stairs": ("1-D Dynamic Prog", "Easy", "Min Cost Climbing Stairs"),
-    "house-robber": ("1-D Dynamic Prog", "Medium", "House Robber"),
-    "house-robber-ii": ("1-D Dynamic Prog", "Medium", "House Robber II"),
-    "longest-palindromic-substring": ("1-D Dynamic Prog", "Medium", "Longest Palindromic Substring"),
-    "palindromic-substrings": ("1-D Dynamic Prog", "Medium", "Palindromic Substrings"),
-    "decode-ways": ("1-D Dynamic Prog", "Medium", "Decode Ways"),
-    "coin-change": ("1-D Dynamic Prog", "Medium", "Coin Change"),
-    "maximum-product-subarray": ("1-D Dynamic Prog", "Medium", "Maximum Product Subarray"),
-    "word-break": ("1-D Dynamic Prog", "Medium", "Word Break"),
-    "longest-increasing-subsequence": ("1-D Dynamic Prog", "Medium", "Longest Increasing Subsequence"),
-    "partition-equal-subset-sum": ("1-D Dynamic Prog", "Medium", "Partition Equal Subset Sum"),
-
-    # 2-D Dynamic Prog (11)
-    "unique-paths": ("2-D Dynamic Prog", "Medium", "Unique Paths"),
-    "longest-common-subsequence": ("2-D Dynamic Prog", "Medium", "Longest Common Subsequence"),
-    "best-time-to-buy-and-sell-stock-with-cooldown": ("2-D Dynamic Prog", "Medium", "Best Time to Buy/Sell Stock with Cooldown"),
-    "coin-change-ii": ("2-D Dynamic Prog", "Medium", "Coin Change II"),
-    "target-sum": ("2-D Dynamic Prog", "Medium", "Target Sum"),
-    "interleaving-string": ("2-D Dynamic Prog", "Medium", "Interleaving String"),
-    "longest-increasing-path-in-a-matrix": ("2-D Dynamic Prog", "Hard", "Longest Increasing Path in a Matrix"),
-    "distinct-subsequences": ("2-D Dynamic Prog", "Hard", "Distinct Subsequences"),
-    "edit-distance": ("2-D Dynamic Prog", "Medium", "Edit Distance"),
-    "burst-balloons": ("2-D Dynamic Prog", "Hard", "Burst Balloons"),
-    "regular-expression-matching": ("2-D Dynamic Prog", "Hard", "Regular Expression Matching"),
-
-    # Greedy (8)
-    "maximum-subarray": ("Greedy", "Medium", "Maximum Subarray"),
-    "jump-game": ("Greedy", "Medium", "Jump Game"),
-    "jump-game-ii": ("Greedy", "Medium", "Jump Game II"),
-    "gas-station": ("Greedy", "Medium", "Gas Station"),
-    "hand-of-straights": ("Greedy", "Medium", "Hand of Straights"),
-    "merge-triplets-to-form-target": ("Greedy", "Medium", "Merge Triplets to Form Target Triplet"),
-    "partition-labels": ("Greedy", "Medium", "Partition Labels"),
-    "valid-parenthesis-string": ("Greedy", "Medium", "Valid Parenthesis String"),
-
-    # Intervals (6)
-    "insert-new-interval": ("Intervals", "Medium", "Insert Interval"),
-    "merge-intervals": ("Intervals", "Medium", "Merge Intervals"),
-    "non-overlapping-intervals": ("Intervals", "Medium", "Non-overlapping Intervals"),
-    "meeting-schedule": ("Intervals", "Easy", "Meeting Rooms"),
-    "meeting-schedule-ii": ("Intervals", "Medium", "Meeting Rooms II"),
-    "minimum-interval-including-query": ("Intervals", "Hard", "Minimum Interval to Include Each Query"),
-
-    # Math & Geometry (8)
-    "rotate-matrix": ("Math & Geometry", "Medium", "Rotate Image"),
-    "spiral-matrix": ("Math & Geometry", "Medium", "Spiral Matrix"),
-    "set-matrix-zeroes": ("Math & Geometry", "Medium", "Set Matrix Zeroes"),
-    "happy-number": ("Math & Geometry", "Easy", "Happy Number"),
-    "plus-one": ("Math & Geometry", "Easy", "Plus One"),
-    "pow-x-n": ("Math & Geometry", "Medium", "Pow(x, n)"),
-    "multiply-strings": ("Math & Geometry", "Medium", "Multiply Strings"),
-    "detect-squares": ("Math & Geometry", "Medium", "Detect Squares"),
-
-    # Bit Manipulation (7)
-    "single-number": ("Bit Manipulation", "Easy", "Single Number"),
-    "number-of-one-bits": ("Bit Manipulation", "Easy", "Number of 1 Bits"),
-    "counting-bits": ("Bit Manipulation", "Easy", "Counting Bits"),
-    "reverse-bits": ("Bit Manipulation", "Easy", "Reverse Bits"),
-    "missing-number": ("Bit Manipulation", "Easy", "Missing Number"),
-    "sum-of-two-integers": ("Bit Manipulation", "Medium", "Sum of Two Integers"),
-    "reverse-integer": ("Bit Manipulation", "Medium", "Reverse Integer"),
 }
 
 def fetch_solved_problems_from_repo(repo_owner="BadrKandri", repo_name="neetcode-submissions"):
@@ -208,8 +89,7 @@ def fetch_solved_problems_from_repo(repo_owner="BadrKandri", repo_name="neetcode
                     solved_slugs.add(parts[1])
         print(f"Fetched {len(solved_slugs)} solved problems from {repo_owner}/{repo_name}")
     except Exception as e:
-        print(f"Warning: Could not fetch from GitHub API ({e}). Using fallback solved set.")
-        # Fallback to known solved problems
+        print(f"Warning: Could not fetch from GitHub API ({e}). Using known solved set.")
         solved_slugs = {
             "duplicate-integer",
             "is-anagram",
@@ -225,165 +105,173 @@ def fetch_solved_problems_from_repo(repo_owner="BadrKandri", repo_name="neetcode
         }
     return solved_slugs
 
-def compute_neetcode_stats(solved_slugs):
-    # Initialize categories
-    categories = [
-        # Column 1: Core Data Structures
-        {"name": "Arrays & Hashing", "solved": 0, "total": 9, "color": "#00EA64", "col": 0},
-        {"name": "Two Pointers", "solved": 0, "total": 5, "color": "#00EA64", "col": 0},
-        {"name": "Sliding Window", "solved": 0, "total": 6, "color": "#00EA64", "col": 0},
-        {"name": "Stack", "solved": 0, "total": 7, "color": "#00EA64", "col": 0},
-        {"name": "Binary Search", "solved": 0, "total": 7, "color": "#00EA64", "col": 0},
-        {"name": "Linked List", "solved": 0, "total": 11, "color": "#00EA64", "col": 0},
-
-        # Column 2: Trees, Heaps & Graphs
-        {"name": "Trees", "solved": 0, "total": 15, "color": "#38BDF8", "col": 1},
-        {"name": "Heap / Priority Queue", "solved": 0, "total": 7, "color": "#38BDF8", "col": 1},
-        {"name": "Backtracking", "solved": 0, "total": 9, "color": "#38BDF8", "col": 1},
-        {"name": "Tries", "solved": 0, "total": 3, "color": "#38BDF8", "col": 1},
-        {"name": "Graphs", "solved": 0, "total": 13, "color": "#38BDF8", "col": 1},
-        {"name": "Advanced Graphs", "solved": 0, "total": 6, "color": "#38BDF8", "col": 1},
-
-        # Column 3: DP, Greedy & Math
-        {"name": "1-D Dynamic Prog", "solved": 0, "total": 12, "color": "#A855F7", "col": 2},
-        {"name": "2-D Dynamic Prog", "solved": 0, "total": 11, "color": "#A855F7", "col": 2},
-        {"name": "Greedy", "solved": 0, "total": 8, "color": "#F97316", "col": 2},
-        {"name": "Intervals", "solved": 0, "total": 6, "color": "#F97316", "col": 2},
-        {"name": "Math & Geometry", "solved": 0, "total": 8, "color": "#F97316", "col": 2},
-        {"name": "Bit Manipulation", "solved": 0, "total": 7, "color": "#F97316", "col": 2},
-    ]
-
-    cat_index = {c["name"]: idx for idx, c in enumerate(categories)}
-    diff_counts = {"Easy": 0, "Medium": 0, "Hard": 0}
+def compute_roadmap_stats(solved_slugs):
+    node_data = {c["name"]: {**c, "solved": 0} for c in CORE_CATEGORIES}
+    diff_solved = {"Easy": 0, "Medium": 0, "Hard": 0}
 
     for slug in solved_slugs:
         if slug in NEETCODE_150_MAP:
             cat, diff, name = NEETCODE_150_MAP[slug]
-            if cat in cat_index:
-                categories[cat_index[cat]]["solved"] += 1
-            if diff in diff_counts:
-                diff_counts[diff] += 1
+            if cat in node_data:
+                node_data[cat]["solved"] += 1
+                if diff in diff_solved:
+                    diff_solved[diff] += 1
 
-    return categories, diff_counts
+    return node_data, diff_solved
 
-def render_neetcode_card(categories, diff_counts):
+def render_roadmap_tree_card(node_data, diff_solved):
     width = 780
-    height = 295
+    height = 310
 
-    total_solved = sum(c["solved"] for c in categories)
-    grand_total = sum(c["total"] for c in categories)
+    total_solved = sum(c["solved"] for c in node_data.values())
+    grand_total = sum(c["total"] for c in node_data.values())
     pct = round((total_solved / grand_total) * 100, 1) if grand_total > 0 else 0
-    master_fill_w = max(4, int((total_solved / grand_total) * 732)) if total_solved > 0 else 0
+    master_fill_w = max(6, int((total_solved / grand_total) * 732)) if total_solved > 0 else 0
 
-    col_headers = [
-        {"title": "CORE DATA STRUCTURES", "color": "#00EA64"},
-        {"title": "TREES &amp; GRAPHS", "color": "#38BDF8"},
-        {"title": "DYNAMIC PROG &amp; MATH", "color": "#A855F7"}
-    ]
+    tot_easy = sum(c["easy"] for c in node_data.values())
+    tot_med = sum(c["medium"] for c in node_data.values())
+    tot_hard = sum(c["hard"] for c in node_data.values())
 
-    col_x = [24, 276, 528]
-    items_by_col = [[], [], []]
-    for c in categories:
-        items_by_col[c["col"]].append(c)
+    # Node positions (Exact hierarchy from NeetCode Roadmap)
+    # L1: Arrays & Hashing (Center: 390)
+    # L2: Two Pointers (Center: 240), Stack (Center: 540)
+    # L3: Binary Search (Center: 145), Sliding Window (Center: 390), Linked List (Center: 635)
+    nodes = {
+        "Arrays & Hashing": {"x": 285, "y": 74, "w": 210, "h": 50},
+        "Two Pointers": {"x": 140, "y": 148, "w": 200, "h": 50},
+        "Stack": {"x": 440, "y": 148, "w": 200, "h": 50},
+        "Binary Search": {"x": 40, "y": 222, "w": 210, "h": 50},
+        "Sliding Window": {"x": 285, "y": 222, "w": 210, "h": 50},
+        "Linked List": {"x": 530, "y": 222, "w": 210, "h": 50},
+    }
 
-    columns_svg = []
-    for col_idx in range(3):
-        x = col_x[col_idx]
-        col_meta = col_headers[col_idx]
-        header_svg = f'''
-        <g transform="translate({x}, 76)">
-          <circle cx="4" cy="5" r="2.5" fill="{col_meta['color']}">
-            <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
-          </circle>
-          <text x="12" y="8" fill="{col_meta['color']}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" letter-spacing="0.5px">
-            {col_meta['title']}
-          </text>
-        </g>
-        '''
-        items_svg = []
-        y_item_start = 98
-        for i_idx, item in enumerate(items_by_col[col_idx]):
-            y = y_item_start + i_idx * 24
-            item_solved = item["solved"]
-            item_total = item["total"]
-            bar_w = 48
-            fill_w = int((item_solved / item_total) * bar_w) if item_total > 0 else 0
-            clean_name = item['name'].replace("&", "&amp;")
+    # Connector cables
+    # Active solved path (Arrays -> Stack) glows emerald
+    cables_svg = '''
+    <!-- Connecting Cables -->
+    <g stroke-linecap="round" fill="none">
+      <!-- Arrays & Hashing -> Two Pointers -->
+      <path d="M 390 124 C 390 138, 240 134, 240 148" stroke="#334155" stroke-width="2"/>
+      
+      <!-- Arrays & Hashing -> Stack (Active Solved Path) -->
+      <path d="M 390 124 C 390 138, 540 134, 540 148" stroke="#00EA64" stroke-opacity="0.65" stroke-width="2">
+        <animate attributeName="stroke-opacity" values="0.45;0.85;0.45" dur="3s" repeatCount="indefinite"/>
+      </path>
 
-            # If solved > 0, highlight number and add neon glow
-            if item_solved > 0:
-                fraction_text = f'''<text x="175" y="10" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700">
-                <tspan fill="{item['color']}">{item_solved}</tspan><tspan fill="#64748B">/{item_total}</tspan>
-              </text>'''
-                fill_bar = f'''<rect x="182" y="3" width="{max(4, fill_w)}" height="5" rx="2.5" fill="{item['color']}">
-                <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"/>
+      <!-- Two Pointers -> Binary Search -->
+      <path d="M 240 198 C 240 212, 145 208, 145 222" stroke="#334155" stroke-width="1.8"/>
+
+      <!-- Two Pointers -> Sliding Window -->
+      <path d="M 240 198 C 240 212, 390 208, 390 222" stroke="#334155" stroke-width="1.8"/>
+
+      <!-- Two Pointers -> Linked List -->
+      <path d="M 240 198 C 240 212, 635 208, 635 222" stroke="#334155" stroke-width="1.8"/>
+
+      <!-- Outgoing Cables to Future Categories (Subtle Dash) -->
+      <path d="M 145 272 C 145 284, 200 290, 200 300" stroke="#334155" stroke-width="1.4" stroke-dasharray="3 3" opacity="0.35"/>
+      <path d="M 390 272 C 390 284, 390 290, 390 300" stroke="#334155" stroke-width="1.4" stroke-dasharray="3 3" opacity="0.35"/>
+      <path d="M 635 272 C 635 284, 580 290, 580 300" stroke="#334155" stroke-width="1.4" stroke-dasharray="3 3" opacity="0.35"/>
+    </g>
+    '''
+
+    # Render Node boxes
+    nodes_svg = []
+    for name, pos in nodes.items():
+        data = node_data[name]
+        solved = data["solved"]
+        tot = data["total"]
+        w = pos["w"]
+        h = pos["h"]
+        x = pos["x"]
+        y = pos["y"]
+        bar_w = w - 32
+        fill_w = int((solved / tot) * bar_w) if tot > 0 else 0
+        clean_name = name.replace("&", "&amp;")
+
+        if solved > 0:
+            border_stroke = "#00EA64"
+            border_opacity = "0.55"
+            bar_svg = f'''
+              <rect x="16" y="32" width="{bar_w}" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.08)"/>
+              <rect x="16" y="32" width="{max(6, fill_w)}" height="5" rx="2.5" fill="#00EA64">
+                <animate attributeName="opacity" values="0.85;1;0.85" dur="2.5s" repeatCount="indefinite"/>
               </rect>
-              <circle cx="{182 + max(4, fill_w)}" cy="5.5" r="2" fill="#FFFFFF" opacity="0.9"/>'''
-            else:
-                fraction_text = f'''<text x="175" y="10" text-anchor="end" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="500">
-                0/{item_total}
-              </text>'''
-                fill_bar = ""
+              <circle cx="{16 + max(6, fill_w)}" cy="34.5" r="2.2" fill="#FFFFFF"/>
+            '''
+            num_svg = f'<tspan fill="#00EA64" font-weight="700">{solved}</tspan><tspan fill="#64748B">/{tot}</tspan>'
+            node_bg = "#1B2233"
+        else:
+            border_stroke = "rgba(255, 255, 255, 0.12)"
+            border_opacity = "0.2"
+            bar_svg = f'<rect x="16" y="32" width="{bar_w}" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.08)"/>'
+            num_svg = f'<tspan fill="#64748B">0/{tot}</tspan>'
+            node_bg = "#161B28"
 
-            items_svg.append(f'''
-            <g transform="translate({x}, {y})">
-              <!-- Category Name -->
-              <text x="0" y="10" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="500">
-                {clean_name}
-              </text>
-              <!-- Fraction -->
-              {fraction_text}
-              <!-- Mini Bar Track -->
-              <rect x="182" y="3" width="{bar_w}" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.05)"/>
-              {fill_bar}
-            </g>
-            ''')
-        columns_svg.append(header_svg + "".join(items_svg))
+        nodes_svg.append(f'''
+        <g transform="translate({x}, {y})">
+          <!-- Node Background -->
+          <rect x="0" y="0" width="{w}" height="{h}" rx="10" fill="{node_bg}" stroke="{border_stroke}" stroke-opacity="{border_opacity}" stroke-width="1.2"/>
+          <!-- Title -->
+          <text x="16" y="21" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">
+            {clean_name}
+          </text>
+          <!-- Solved Fraction -->
+          <text x="{w - 16}" y="21" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">
+            {num_svg}
+          </text>
+          <!-- Progress Track -->
+          {bar_svg}
+        </g>
+        ''')
 
-    columns_content = "".join(columns_svg)
-
-    # Active scanner beam end
-    laser_end = master_fill_w if master_fill_w > 0 else 732
+    all_nodes = "".join(nodes_svg)
 
     svg = f'''<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Background Gradient -->
-    <linearGradient id="nc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0A0E17" />
-      <stop offset="50%" stop-color="#0E1422" />
-      <stop offset="100%" stop-color="#121826" />
+    <linearGradient id="tree-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E17"/>
+      <stop offset="50%" stop-color="#0E1422"/>
+      <stop offset="100%" stop-color="#121826"/>
     </linearGradient>
 
     <!-- Border Gradient -->
-    <linearGradient id="nc-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.45" />
-      <stop offset="40%" stop-color="#38BDF8" stop-opacity="0.25" />
-      <stop offset="80%" stop-color="#00EA64" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
+    <linearGradient id="tree-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00EA64" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.45"/>
     </linearGradient>
 
     <!-- Master Progress Gradient -->
-    <linearGradient id="nc-master-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00EA64" />
-      <stop offset="50%" stop-color="#38BDF8" />
-      <stop offset="100%" stop-color="#A855F7" />
+    <linearGradient id="tree-master-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00EA64"/>
+      <stop offset="60%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#A855F7"/>
     </linearGradient>
 
     <!-- Glow Filter -->
-    <filter id="glow-nc" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#00EA64" flood-opacity="0.45"/>
+    <filter id="glow-tree" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#00EA64" flood-opacity="0.5"/>
     </filter>
-    <filter id="glow-laser" x="-100%" y="-100%" width="300%" height="300%">
+    <filter id="laser-glow" x="-100%" y="-100%" width="300%" height="300%">
       <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#00EA64" flood-opacity="0.9"/>
     </filter>
+
+    <!-- Dot Matrix Pattern -->
+    <pattern id="dot-matrix" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#FFFFFF" opacity="0.04"/>
+    </pattern>
   </defs>
 
-  <!-- Card Background with Breathing Border -->
-  <rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="16" fill="url(#nc-bg)" stroke="url(#nc-border)" stroke-width="1.2">
+  <!-- Card Background -->
+  <rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="16" fill="url(#tree-bg)" stroke="url(#tree-border)" stroke-width="1.2">
     <animate attributeName="stroke-opacity" values="0.35;0.7;0.35" dur="4s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- Corner Ambient Light with Breathing -->
+  <!-- Dot Matrix Grid Canvas -->
+  <rect x="2" y="2" width="{width - 4}" height="{height - 4}" rx="15" fill="url(#dot-matrix)"/>
+
+  <!-- Ambient Light Corner Glows -->
   <circle cx="35" cy="35" r="75" fill="#00EA64" opacity="0.05">
     <animate attributeName="opacity" values="0.03;0.09;0.03" dur="4s" repeatCount="indefinite"/>
   </circle>
@@ -391,7 +279,7 @@ def render_neetcode_card(categories, diff_counts):
     <animate attributeName="opacity" values="0.03;0.08;0.03" begin="2s" dur="4s" repeatCount="indefinite"/>
   </circle>
 
-  <!-- Top Header -->
+  <!-- Header Section -->
   <g transform="translate(24, 18)">
     <!-- Puzzle Piece Icon -->
     <g transform="translate(0, 1)">
@@ -400,26 +288,26 @@ def render_neetcode_card(categories, diff_counts):
 
     <!-- Title -->
     <text x="20" y="12" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="700">
-      NeetCode 150 Roadmap Tracker
+      NeetCode Roadmap Tracker
     </text>
 
-    <!-- Domain Pill with Beacon Radar Animation -->
-    <g transform="translate(242, 0)">
+    <!-- Domain Pill -->
+    <g transform="translate(216, 0)">
       <rect x="0" y="0" width="168" height="17" rx="8.5" fill="#00EA64" fill-opacity="0.08" stroke="#00EA64" stroke-opacity="0.25" stroke-width="0.8"/>
       <!-- Radar Pulse -->
       <circle cx="8" cy="8.5" r="2.5" fill="none" stroke="#00EA64" stroke-width="0.8">
         <animate attributeName="r" values="2.5;6.5" dur="2s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0.75;0" dur="2s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="8" cy="8.5" r="2.5" fill="#00EA64" filter="url(#glow-nc)">
+      <circle cx="8" cy="8.5" r="2.5" fill="#00EA64" filter="url(#glow-tree)">
         <animate attributeName="r" values="2.5;3.1;2.5" dur="2s" repeatCount="indefinite"/>
       </circle>
       <text x="16" y="12" fill="#00EA64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.3px">
-        DATA STRUCTURES &amp; ALGORITHMS
+        CORE DATA STRUCTURES
       </text>
     </g>
 
-    <!-- Total Counter (Right) -->
+    <!-- Total Counter -->
     <g transform="translate({width - 48 - 145}, 0)">
       <text x="0" y="12" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5">
         Solved: <tspan fill="#00EA64" font-weight="700" font-size="12">{total_solved} / {grand_total}</tspan> <tspan fill="#64748B">({pct}%)</tspan>
@@ -428,10 +316,10 @@ def render_neetcode_card(categories, diff_counts):
 
     <!-- Master Progress Track -->
     <rect x="0" y="27" width="732" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.05)"/>
-    {f'<rect x="0" y="27" width="{master_fill_w}" height="5" rx="2.5" fill="url(#nc-master-grad)"/>' if master_fill_w > 0 else ''}
+    <rect x="0" y="27" width="{master_fill_w}" height="5" rx="2.5" fill="url(#tree-master-grad)"/>
 
-    <!-- Active Scanner Beam along the Track -->
-    <circle cy="29.5" r="2.2" fill="#00EA64" filter="url(#glow-laser)">
+    <!-- Active Scanner Beam -->
+    <circle cy="29.5" r="2.2" fill="#00EA64" filter="url(#laser-glow)">
       <animate attributeName="cx" values="0;{master_fill_w};0" dur="2.8s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
       <animate attributeName="opacity" values="0.5;1;0.5" dur="2.8s" repeatCount="indefinite"/>
     </circle>
@@ -440,43 +328,38 @@ def render_neetcode_card(categories, diff_counts):
     <line x1="0" y1="42" x2="732" y2="42" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" />
   </g>
 
-  <!-- 3 Columns Content -->
-  {columns_content}
+  <!-- Connectors -->
+  {cables_svg}
 
-  <!-- Footer Bar -->
-  <g transform="translate(24, 254)">
-    <rect x="0" y="0" width="732" height="24" rx="6" fill="rgba(255, 255, 255, 0.02)" stroke="rgba(255, 255, 255, 0.04)" stroke-width="0.8"/>
+  <!-- Roadmap Nodes -->
+  {all_nodes}
+
+  <!-- Bottom Legend Bar -->
+  <g transform="translate(24, 282)">
     <!-- Easy -->
-    <circle cx="16" cy="12" r="3" fill="#00EA64">
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.4s" repeatCount="indefinite"/>
-    </circle>
-    <text x="25" y="15" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
-      Easy: <tspan font-weight="700" fill="#00EA64">{diff_counts['Easy']}</tspan><tspan fill="#64748B"> / 44</tspan>
+    <circle cx="6" cy="5" r="2.5" fill="#00EA64"/>
+    <text x="14" y="8" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
+      Easy: <tspan fill="#00EA64" font-weight="700">{diff_solved['Easy']}</tspan><tspan fill="#64748B">/{tot_easy}</tspan>
     </text>
 
     <!-- Medium -->
-    <circle cx="140" cy="12" r="3" fill="#F59E0B">
-      <animate attributeName="opacity" values="0.6;1;0.6" begin="0.8s" dur="2.4s" repeatCount="indefinite"/>
-    </circle>
-    <text x="149" y="15" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
-      Medium: <tspan font-weight="700" fill="#F59E0B">{diff_counts['Medium']}</tspan><tspan fill="#64748B"> / 88</tspan>
+    <circle cx="110" cy="5" r="2.5" fill="#F59E0B"/>
+    <text x="118" y="8" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
+      Medium: <tspan fill="#F59E0B" font-weight="700">{diff_solved['Medium']}</tspan><tspan fill="#64748B">/{tot_med}</tspan>
     </text>
 
     <!-- Hard -->
-    <circle cx="280" cy="12" r="3" fill="#EF4444">
-      <animate attributeName="opacity" values="0.6;1;0.6" begin="1.6s" dur="2.4s" repeatCount="indefinite"/>
-    </circle>
-    <text x="289" y="15" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
-      Hard: <tspan font-weight="700" fill="#EF4444">{diff_counts['Hard']}</tspan><tspan fill="#64748B"> / 18</tspan>
+    <circle cx="230" cy="5" r="2.5" fill="#EF4444"/>
+    <text x="238" y="8" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
+      Hard: <tspan fill="#EF4444" font-weight="700">{diff_solved['Hard']}</tspan><tspan fill="#64748B">/{tot_hard}</tspan>
     </text>
 
-    <!-- Roadmap Total Tag -->
-    <text x="720" y="15" text-anchor="end" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600">
-      ACTIVE ROADMAP &#183; {total_solved} / {grand_total} SOLVED
+    <!-- Right Tag -->
+    <text x="732" y="8" text-anchor="end" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600">
+      PHASE 1: CORE DATA STRUCTURES &#183; {total_solved}/{grand_total} SOLVED
     </text>
   </g>
-</svg>
-'''
+</svg>'''
     return svg
 
 def main():
@@ -484,21 +367,21 @@ def main():
         "assets/neetcode"
     ]
     solved_slugs = fetch_solved_problems_from_repo()
-    categories, diff_counts = compute_neetcode_stats(solved_slugs)
-    svg_code = render_neetcode_card(categories, diff_counts)
+    node_data, diff_solved = compute_roadmap_stats(solved_slugs)
+    svg_code = render_roadmap_tree_card(node_data, diff_solved)
 
     # Validate XML
     ET.fromstring(svg_code)
 
     for out_dir in target_dirs:
         os.makedirs(out_dir, exist_ok=True)
-        for prefix in ["", "card_", "card_v1_", "card_v2_"]:
+        for prefix in ["", "card_", "card_v1_", "card_v2_", "card_v3_"]:
             file_path = os.path.join(out_dir, f"{prefix}neetcode.svg")
             with open(file_path, "w", encoding="utf-8") as f:
                 f.write(svg_code)
 
-    total_solved = sum(c["solved"] for c in categories)
-    print(f"Successfully generated NeetCode card with {total_solved} solved problems ({diff_counts})!")
+    total_solved = sum(c["solved"] for c in node_data.values())
+    print(f"Generated 6-node NeetCode Roadmap Tree with {total_solved} solved problems ({diff_solved})!")
 
 if __name__ == "__main__":
     main()
