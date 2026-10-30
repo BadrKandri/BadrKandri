@@ -1,4 +1,4 @@
-name: Update HackerRank card
+name: Update Visualizers (HackerRank & NeetCode)
 
 on:
   schedule:
@@ -30,15 +30,19 @@ jobs:
           python .github/scripts/generate_hackerrank_card.py
           cp assets/hackerrank-dashboard.svg assets/hackerrank-card.svg
 
-      - name: Commit generated card
+      - name: Generate NeetCode 150 card
+        run: |
+          python .github/scripts/generate_neetcode_card.py
+
+      - name: Commit generated cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/hackerrank-dashboard.svg assets/hackerrank-card.svg
+          git add assets/hackerrank-dashboard.svg assets/hackerrank-card.svg assets/neetcode/
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: update HackerRank dashboard card [skip ci]"
+            git commit -m "chore: update HackerRank & NeetCode cards [skip ci]"
             git pull --rebase origin main
             git push origin main
           fi
