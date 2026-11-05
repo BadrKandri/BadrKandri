@@ -105,21 +105,25 @@
     <!-- Connecting Cables -->
     <g stroke-linecap="round" fill="none">
       <!-- Arrays & Hashing -> Two Pointers -->
-      <path d="M 390 124 C 390 138, 240 134, 240 148" stroke="#334155" stroke-width="2"/>
-      
-      <!-- Arrays & Hashing -> Stack (Active Solved Path) -->
-      <path d="M 390 124 C 390 138, 540 134, 540 148" stroke="#00EA64" stroke-opacity="0.65" stroke-width="2">
-        <animate attributeName="stroke-opacity" values="0.45;0.85;0.45" dur="3s" repeatCount="indefinite"/>
+      <path d="M 390 124 C 390 138, 240 134, 240 148" stroke="#00EA64" stroke-opacity="0.75" stroke-width="2.0">
+        <animate attributeName="stroke-opacity" values="0.5;0.95;0.5" dur="3s" repeatCount="indefinite"/>
       </path>
-
+      <!-- Arrays & Hashing -> Stack -->
+      <path d="M 390 124 C 390 138, 540 134, 540 148" stroke="#00EA64" stroke-opacity="0.75" stroke-width="2.0">
+        <animate attributeName="stroke-opacity" values="0.5;0.95;0.5" dur="3s" repeatCount="indefinite"/>
+      </path>
       <!-- Two Pointers -> Binary Search -->
-      <path d="M 240 198 C 240 212, 145 208, 145 222" stroke="#334155" stroke-width="1.8"/>
-
+      <path d="M 240 198 C 240 212, 145 208, 145 222" stroke="#00EA64" stroke-opacity="0.75" stroke-width="1.8">
+        <animate attributeName="stroke-opacity" values="0.5;0.95;0.5" dur="3s" repeatCount="indefinite"/>
+      </path>
       <!-- Two Pointers -> Sliding Window -->
-      <path d="M 240 198 C 240 212, 390 208, 390 222" stroke="#334155" stroke-width="1.8"/>
-
+      <path d="M 240 198 C 240 212, 390 208, 390 222" stroke="#00EA64" stroke-opacity="0.75" stroke-width="1.8">
+        <animate attributeName="stroke-opacity" values="0.5;0.95;0.5" dur="3s" repeatCount="indefinite"/>
+      </path>
       <!-- Two Pointers -> Linked List -->
-      <path d="M 240 198 C 240 212, 635 208, 635 222" stroke="#334155" stroke-width="1.8"/>
+      <path d="M 240 198 C 240 212, 635 208, 635 222" stroke="#00EA64" stroke-opacity="0.75" stroke-width="1.8">
+        <animate attributeName="stroke-opacity" values="0.5;0.95;0.5" dur="3s" repeatCount="indefinite"/>
+      </path>
 
       <!-- Outgoing Cables to Future Categories (Subtle Dash) -->
       <path d="M 145 272 C 145 284, 200 290, 200 300" stroke="#334155" stroke-width="1.4" stroke-dasharray="3 3" opacity="0.35"/>

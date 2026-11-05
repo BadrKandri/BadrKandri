@@ -98,10 +98,20 @@ def fetch_solved_problems_from_repo(repo_owner="BadrKandri", repo_name="neetcode
             "top-k-elements-in-list",
             "products-of-array-discluding-self",
             "longest-consecutive-sequence",
+            "is-palindrome",
+            "two-integer-sum-ii",
+            "three-integer-sum",
+            "max-water-container",
+            "buy-and-sell-crypto",
+            "longest-substring-without-duplicates",
             "validate-parentheses",
             "minimum-stack",
             "evaluate-reverse-polish-notation",
             "daily-temperatures",
+            "binary-search",
+            "search-2d-matrix",
+            "reverse-a-linked-list",
+            "merge-two-sorted-linked-lists",
         }
     return solved_slugs
 
@@ -145,27 +155,38 @@ def render_roadmap_tree_card(node_data, diff_solved):
         "Linked List": {"x": 530, "y": 222, "w": 210, "h": 50},
     }
 
-    # Connector cables
-    # Active solved path (Arrays -> Stack) glows emerald
-    cables_svg = '''
+    # Cable path generator: dynamically lights up green if target node is active/unlocked
+    def render_cable(d_path, src_name, tgt_name, w_val=2.0):
+        src_s = node_data[src_name]["solved"]
+        tgt_s = node_data[tgt_name]["solved"]
+        if src_s > 0 and tgt_s > 0:
+            return f'''<path d="{d_path}" stroke="#00EA64" stroke-opacity="0.75" stroke-width="{w_val}">
+        <animate attributeName="stroke-opacity" values="0.5;0.95;0.5" dur="3s" repeatCount="indefinite"/>
+      </path>'''
+        elif src_s > 0:
+            return f'<path d="{d_path}" stroke="#00EA64" stroke-opacity="0.35" stroke-width="{w_val}" stroke-dasharray="4 2"/>'
+        else:
+            return f'<path d="{d_path}" stroke="#334155" stroke-width="{w_val}"/>'
+
+    c_arr_tp = render_cable("M 390 124 C 390 138, 240 134, 240 148", "Arrays & Hashing", "Two Pointers", 2.0)
+    c_arr_st = render_cable("M 390 124 C 390 138, 540 134, 540 148", "Arrays & Hashing", "Stack", 2.0)
+    c_tp_bs = render_cable("M 240 198 C 240 212, 145 208, 145 222", "Two Pointers", "Binary Search", 1.8)
+    c_tp_sw = render_cable("M 240 198 C 240 212, 390 208, 390 222", "Two Pointers", "Sliding Window", 1.8)
+    c_tp_ll = render_cable("M 240 198 C 240 212, 635 208, 635 222", "Two Pointers", "Linked List", 1.8)
+
+    cables_svg = f'''
     <!-- Connecting Cables -->
     <g stroke-linecap="round" fill="none">
       <!-- Arrays & Hashing -> Two Pointers -->
-      <path d="M 390 124 C 390 138, 240 134, 240 148" stroke="#334155" stroke-width="2"/>
-      
-      <!-- Arrays & Hashing -> Stack (Active Solved Path) -->
-      <path d="M 390 124 C 390 138, 540 134, 540 148" stroke="#00EA64" stroke-opacity="0.65" stroke-width="2">
-        <animate attributeName="stroke-opacity" values="0.45;0.85;0.45" dur="3s" repeatCount="indefinite"/>
-      </path>
-
+      {c_arr_tp}
+      <!-- Arrays & Hashing -> Stack -->
+      {c_arr_st}
       <!-- Two Pointers -> Binary Search -->
-      <path d="M 240 198 C 240 212, 145 208, 145 222" stroke="#334155" stroke-width="1.8"/>
-
+      {c_tp_bs}
       <!-- Two Pointers -> Sliding Window -->
-      <path d="M 240 198 C 240 212, 390 208, 390 222" stroke="#334155" stroke-width="1.8"/>
-
+      {c_tp_sw}
       <!-- Two Pointers -> Linked List -->
-      <path d="M 240 198 C 240 212, 635 208, 635 222" stroke="#334155" stroke-width="1.8"/>
+      {c_tp_ll}
 
       <!-- Outgoing Cables to Future Categories (Subtle Dash) -->
       <path d="M 145 272 C 145 284, 200 290, 200 300" stroke="#334155" stroke-width="1.4" stroke-dasharray="3 3" opacity="0.35"/>
@@ -375,13 +396,13 @@ def main():
 
     for out_dir in target_dirs:
         os.makedirs(out_dir, exist_ok=True)
-        for prefix in ["", "card_", "card_v1_", "card_v2_", "card_v3_"]:
+        for prefix in ["", "card_", "card_v1_", "card_v2_", "card_v3_", "card_v4_"]:
             file_path = os.path.join(out_dir, f"{prefix}neetcode.svg")
             with open(file_path, "w", encoding="utf-8") as f:
                 f.write(svg_code)
 
     total_solved = sum(c["solved"] for c in node_data.values())
-    print(f"Generated 6-node NeetCode Roadmap Tree with {total_solved} solved problems ({diff_solved})!")
+    print(f"Generated 6-node NeetCode Roadmap Tree with {total_solved} solved problems ({diff_solved}) across all prefixes including card_v4_!")
 
 if __name__ == "__main__":
     main()
