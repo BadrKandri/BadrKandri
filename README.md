@@ -43,7 +43,7 @@ I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in 
 </p>
 
 <p align="center">
-  <img src="assets/neetcode/card_v5_neetcode.svg" width="780" alt="NeetCode Blind 75 Roadmap Tracker" />
+  <img src="assets/neetcode/card_v6_neetcode.svg" width="780" alt="NeetCode Blind 75 Roadmap Tracker" />
 </p>
 
 <p align="center">

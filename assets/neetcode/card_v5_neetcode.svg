@@ -91,17 +91,17 @@
     <!-- Total Counter -->
     <g transform="translate(587, 0)">
       <text x="0" y="12" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5">
-        Solved: <tspan fill="#00EA64" font-weight="700" font-size="12">15 / 75</tspan> <tspan fill="#64748B">(20.0%)</tspan>
+        Solved: <tspan fill="#00EA64" font-weight="700" font-size="12">15 / 25</tspan> <tspan fill="#64748B">(60.0%)</tspan>
       </text>
     </g>
 
     <!-- Master Progress Track -->
     <rect x="0" y="27" width="732" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.05)"/>
-    <rect x="0" y="27" width="146" height="5" rx="2.5" fill="url(#tree-master-grad)"/>
+    <rect x="0" y="27" width="439" height="5" rx="2.5" fill="url(#tree-master-grad)"/>
 
     <!-- Active Scanner Beam -->
     <circle cy="29.5" r="2.2" fill="#00EA64" filter="url(#laser-glow)">
-      <animate attributeName="cx" values="0;146;0" dur="2.8s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
+      <animate attributeName="cx" values="0;439;0" dur="2.8s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"/>
       <animate attributeName="opacity" values="0.5;1;0.5" dur="2.8s" repeatCount="indefinite"/>
     </circle>
 
@@ -267,24 +267,24 @@
     <!-- Easy -->
     <circle cx="6" cy="5" r="2.5" fill="#00EA64"/>
     <text x="14" y="8" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
-      Easy: <tspan fill="#00EA64" font-weight="700">8</tspan><tspan fill="#64748B">/19</tspan>
+      Easy: <tspan fill="#00EA64" font-weight="700">8</tspan><tspan fill="#64748B">/9</tspan>
     </text>
 
     <!-- Medium -->
     <circle cx="110" cy="5" r="2.5" fill="#F59E0B"/>
     <text x="118" y="8" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
-      Medium: <tspan fill="#F59E0B" font-weight="700">7</tspan><tspan fill="#64748B">/49</tspan>
+      Medium: <tspan fill="#F59E0B" font-weight="700">7</tspan><tspan fill="#64748B">/14</tspan>
     </text>
 
     <!-- Hard -->
     <circle cx="230" cy="5" r="2.5" fill="#EF4444"/>
     <text x="238" y="8" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500">
-      Hard: <tspan fill="#EF4444" font-weight="700">0</tspan><tspan fill="#64748B">/7</tspan>
+      Hard: <tspan fill="#EF4444" font-weight="700">0</tspan><tspan fill="#64748B">/2</tspan>
     </text>
 
     <!-- Right Tag -->
     <text x="732" y="8" text-anchor="end" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600">
-      CORE NODES &#183; 15/25 SOLVED
+      PHASE 1: CORE DATA STRUCTURES &#183; 15/25 SOLVED
     </text>
   </g>
 </svg>

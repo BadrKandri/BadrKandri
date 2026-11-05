@@ -5,6 +5,7 @@ import urllib.error
 import xml.etree.ElementTree as ET
 
 # 6 Core Roadmap Nodes and their metadata in Blind 75
+# Total sum of problems to do: 8 + 3 + 1 + 2 + 4 + 7 = 25
 CORE_CATEGORIES = [
     {"name": "Arrays & Hashing", "total": 8, "easy": 3, "medium": 5, "hard": 0},
     {"name": "Two Pointers", "total": 3, "easy": 1, "medium": 2, "hard": 0},
@@ -13,14 +14,6 @@ CORE_CATEGORIES = [
     {"name": "Sliding Window", "total": 4, "easy": 1, "medium": 2, "hard": 1},
     {"name": "Linked List", "total": 7, "easy": 3, "medium": 3, "hard": 1},
 ]
-
-# Overall Blind 75 difficulty totals (across all 75 problems)
-BLIND_75_OVERALL = {
-    "total": 75,
-    "easy": 19,
-    "medium": 49,
-    "hard": 7
-}
 
 # Slug to (category, difficulty, problem_name) for Blind 75
 BLIND_75_MAP = {
@@ -116,17 +109,14 @@ def render_roadmap_tree_card(node_data, diff_solved):
     height = 310
 
     core_solved = sum(c["solved"] for c in node_data.values())
-    core_total = sum(c["total"] for c in node_data.values())
+    core_total = sum(c["total"] for c in node_data.values())  # 8+3+1+2+4+7 = 25
     
-    overall_total = BLIND_75_OVERALL["total"]
-    overall_solved = core_solved  # All 15 solved problems are in Core Data Structures
-    overall_pct = round((overall_solved / overall_total) * 100, 1)
+    pct = round((core_solved / core_total) * 100, 1) if core_total > 0 else 0
+    master_fill_w = max(6, int((core_solved / core_total) * 732)) if core_solved > 0 else 0
 
-    master_fill_w = max(6, int((overall_solved / overall_total) * 732)) if overall_solved > 0 else 0
-
-    tot_easy = BLIND_75_OVERALL["easy"]
-    tot_med = BLIND_75_OVERALL["medium"]
-    tot_hard = BLIND_75_OVERALL["hard"]
+    tot_easy = sum(c["easy"] for c in node_data.values())
+    tot_med = sum(c["medium"] for c in node_data.values())
+    tot_hard = sum(c["hard"] for c in node_data.values())
 
     # Node positions (Exact hierarchy from NeetCode Roadmap)
     # L1: Arrays & Hashing (Center: 390)
@@ -349,7 +339,7 @@ def render_roadmap_tree_card(node_data, diff_solved):
     <!-- Total Counter -->
     <g transform="translate({width - 48 - 145}, 0)">
       <text x="0" y="12" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5">
-        Solved: <tspan fill="#00EA64" font-weight="700" font-size="12">{overall_solved} / {overall_total}</tspan> <tspan fill="#64748B">({overall_pct}%)</tspan>
+        Solved: <tspan fill="#00EA64" font-weight="700" font-size="12">{core_solved} / {core_total}</tspan> <tspan fill="#64748B">({pct}%)</tspan>
       </text>
     </g>
 
@@ -395,7 +385,7 @@ def render_roadmap_tree_card(node_data, diff_solved):
 
     <!-- Right Tag -->
     <text x="732" y="8" text-anchor="end" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600">
-      CORE NODES &#183; {core_solved}/{core_total} SOLVED
+      PHASE 1: CORE DATA STRUCTURES &#183; {core_solved}/{core_total} SOLVED
     </text>
   </g>
 </svg>'''
@@ -414,13 +404,14 @@ def main():
 
     for out_dir in target_dirs:
         os.makedirs(out_dir, exist_ok=True)
-        for prefix in ["", "card_", "card_v1_", "card_v2_", "card_v3_", "card_v4_", "card_v5_"]:
+        for prefix in ["", "card_", "card_v1_", "card_v2_", "card_v3_", "card_v4_", "card_v5_", "card_v6_"]:
             file_path = os.path.join(out_dir, f"{prefix}neetcode.svg")
             with open(file_path, "w", encoding="utf-8") as f:
                 f.write(svg_code)
 
     core_solved = sum(c["solved"] for c in node_data.values())
-    print(f"Generated 6-node Blind 75 Roadmap Tree with {core_solved} solved problems ({diff_solved}) across all prefixes including card_v5_!")
+    core_total = sum(c["total"] for c in node_data.values())
+    print(f"Generated 6-node Blind 75 Roadmap Tree with {core_solved}/{core_total} solved problems ({diff_solved}) across all prefixes including card_v6_!")
 
 if __name__ == "__main__":
     main()
