@@ -4,19 +4,27 @@ import urllib.request
 import urllib.error
 import xml.etree.ElementTree as ET
 
-# 6 Core Roadmap Nodes and their metadata
+# 6 Core Roadmap Nodes and their metadata in Blind 75
 CORE_CATEGORIES = [
-    {"name": "Arrays & Hashing", "total": 9, "easy": 3, "medium": 6, "hard": 0},
-    {"name": "Two Pointers", "total": 5, "easy": 1, "medium": 3, "hard": 1},
-    {"name": "Stack", "total": 7, "easy": 1, "medium": 5, "hard": 1},
-    {"name": "Binary Search", "total": 7, "easy": 1, "medium": 5, "hard": 1},
-    {"name": "Sliding Window", "total": 6, "easy": 1, "medium": 3, "hard": 2},
-    {"name": "Linked List", "total": 11, "easy": 3, "medium": 6, "hard": 2},
+    {"name": "Arrays & Hashing", "total": 8, "easy": 3, "medium": 5, "hard": 0},
+    {"name": "Two Pointers", "total": 3, "easy": 1, "medium": 2, "hard": 0},
+    {"name": "Stack", "total": 1, "easy": 1, "medium": 0, "hard": 0},
+    {"name": "Binary Search", "total": 2, "easy": 0, "medium": 2, "hard": 0},
+    {"name": "Sliding Window", "total": 4, "easy": 1, "medium": 2, "hard": 1},
+    {"name": "Linked List", "total": 7, "easy": 3, "medium": 3, "hard": 1},
 ]
 
-# Slug to (category, difficulty, problem_name)
-NEETCODE_150_MAP = {
-    # Arrays & Hashing (9)
+# Overall Blind 75 difficulty totals (across all 75 problems)
+BLIND_75_OVERALL = {
+    "total": 75,
+    "easy": 19,
+    "medium": 49,
+    "hard": 7
+}
+
+# Slug to (category, difficulty, problem_name) for Blind 75
+BLIND_75_MAP = {
+    # Arrays & Hashing (8)
     "duplicate-integer": ("Arrays & Hashing", "Easy", "Contains Duplicate"),
     "is-anagram": ("Arrays & Hashing", "Easy", "Valid Anagram"),
     "two-integer-sum": ("Arrays & Hashing", "Easy", "Two Sum"),
@@ -24,54 +32,34 @@ NEETCODE_150_MAP = {
     "top-k-elements-in-list": ("Arrays & Hashing", "Medium", "Top K Frequent Elements"),
     "products-of-array-discluding-self": ("Arrays & Hashing", "Medium", "Product of Array Except Self"),
     "valid-sudoku": ("Arrays & Hashing", "Medium", "Valid Sudoku"),
-    "string-encode-and-decode": ("Arrays & Hashing", "Medium", "Encode and Decode Strings"),
     "longest-consecutive-sequence": ("Arrays & Hashing", "Medium", "Longest Consecutive Sequence"),
 
-    # Two Pointers (5)
+    # Two Pointers (3)
     "is-palindrome": ("Two Pointers", "Easy", "Valid Palindrome"),
-    "two-integer-sum-ii": ("Two Pointers", "Medium", "Two Sum II"),
     "three-integer-sum": ("Two Pointers", "Medium", "3Sum"),
     "max-water-container": ("Two Pointers", "Medium", "Container With Most Water"),
-    "trapping-rain-water": ("Two Pointers", "Hard", "Trapping Rain Water"),
 
-    # Sliding Window (6)
+    # Sliding Window (4)
     "buy-and-sell-crypto": ("Sliding Window", "Easy", "Best Time to Buy And Sell Stock"),
     "longest-substring-without-duplicates": ("Sliding Window", "Medium", "Longest Substring Without Repeating Characters"),
     "longest-repeating-substring-with-replacement": ("Sliding Window", "Medium", "Longest Repeating Character Replacement"),
-    "permutation-string": ("Sliding Window", "Medium", "Permutation In String"),
     "minimum-window-with-characters": ("Sliding Window", "Hard", "Minimum Window Substring"),
-    "sliding-window-maximum": ("Sliding Window", "Hard", "Sliding Window Maximum"),
 
-    # Stack (7)
+    # Stack (1)
     "validate-parentheses": ("Stack", "Easy", "Valid Parentheses"),
-    "minimum-stack": ("Stack", "Medium", "Min Stack"),
-    "evaluate-reverse-polish-notation": ("Stack", "Medium", "Evaluate Reverse Polish Notation"),
-    "generate-parentheses": ("Stack", "Medium", "Generate Parentheses"),
-    "daily-temperatures": ("Stack", "Medium", "Daily Temperatures"),
-    "car-fleet": ("Stack", "Medium", "Car Fleet"),
-    "largest-rectangle-in-histogram": ("Stack", "Hard", "Largest Rectangle In Histogram"),
 
-    # Binary Search (7)
-    "binary-search": ("Binary Search", "Easy", "Binary Search"),
-    "search-2d-matrix": ("Binary Search", "Medium", "Search a 2D Matrix"),
-    "eating-bananas": ("Binary Search", "Medium", "Koko Eating Bananas"),
+    # Binary Search (2)
     "find-minimum-in-rotated-sorted-array": ("Binary Search", "Medium", "Find Minimum In Rotated Sorted Array"),
     "find-target-in-rotated-sorted-array": ("Binary Search", "Medium", "Search In Rotated Sorted Array"),
-    "time-based-key-value-store": ("Binary Search", "Medium", "Time Based Key-Value Store"),
-    "median-of-two-sorted-arrays": ("Binary Search", "Hard", "Median of Two Sorted Arrays"),
 
-    # Linked List (11)
+    # Linked List (7)
     "reverse-a-linked-list": ("Linked List", "Easy", "Reverse Linked List"),
     "merge-two-sorted-linked-lists": ("Linked List", "Easy", "Merge Two Sorted Lists"),
+    "linked-list-cycle-detection": ("Linked List", "Easy", "Linked List Cycle"),
     "reorder-linked-list": ("Linked List", "Medium", "Reorder List"),
     "remove-node-from-end-of-linked-list": ("Linked List", "Medium", "Remove Nth Node From End of List"),
     "copy-linked-list-with-random-pointer": ("Linked List", "Medium", "Copy List With Random Pointer"),
-    "add-two-numbers": ("Linked List", "Medium", "Add Two Numbers"),
-    "linked-list-cycle-detection": ("Linked List", "Easy", "Linked List Cycle"),
-    "find-duplicate-integer": ("Linked List", "Medium", "Find The Duplicate Number"),
-    "lru-cache": ("Linked List", "Medium", "LRU Cache"),
     "merge-k-sorted-linked-lists": ("Linked List", "Hard", "Merge K Sorted Lists"),
-    "reverse-nodes-in-k-group": ("Linked List", "Hard", "Reverse Nodes In K Group"),
 }
 
 def fetch_solved_problems_from_repo(repo_owner="BadrKandri", repo_name="neetcode-submissions"):
@@ -99,17 +87,11 @@ def fetch_solved_problems_from_repo(repo_owner="BadrKandri", repo_name="neetcode
             "products-of-array-discluding-self",
             "longest-consecutive-sequence",
             "is-palindrome",
-            "two-integer-sum-ii",
             "three-integer-sum",
             "max-water-container",
             "buy-and-sell-crypto",
             "longest-substring-without-duplicates",
             "validate-parentheses",
-            "minimum-stack",
-            "evaluate-reverse-polish-notation",
-            "daily-temperatures",
-            "binary-search",
-            "search-2d-matrix",
             "reverse-a-linked-list",
             "merge-two-sorted-linked-lists",
         }
@@ -120,8 +102,8 @@ def compute_roadmap_stats(solved_slugs):
     diff_solved = {"Easy": 0, "Medium": 0, "Hard": 0}
 
     for slug in solved_slugs:
-        if slug in NEETCODE_150_MAP:
-            cat, diff, name = NEETCODE_150_MAP[slug]
+        if slug in BLIND_75_MAP:
+            cat, diff, name = BLIND_75_MAP[slug]
             if cat in node_data:
                 node_data[cat]["solved"] += 1
                 if diff in diff_solved:
@@ -133,14 +115,18 @@ def render_roadmap_tree_card(node_data, diff_solved):
     width = 780
     height = 310
 
-    total_solved = sum(c["solved"] for c in node_data.values())
-    grand_total = sum(c["total"] for c in node_data.values())
-    pct = round((total_solved / grand_total) * 100, 1) if grand_total > 0 else 0
-    master_fill_w = max(6, int((total_solved / grand_total) * 732)) if total_solved > 0 else 0
+    core_solved = sum(c["solved"] for c in node_data.values())
+    core_total = sum(c["total"] for c in node_data.values())
+    
+    overall_total = BLIND_75_OVERALL["total"]
+    overall_solved = core_solved  # All 15 solved problems are in Core Data Structures
+    overall_pct = round((overall_solved / overall_total) * 100, 1)
 
-    tot_easy = sum(c["easy"] for c in node_data.values())
-    tot_med = sum(c["medium"] for c in node_data.values())
-    tot_hard = sum(c["hard"] for c in node_data.values())
+    master_fill_w = max(6, int((overall_solved / overall_total) * 732)) if overall_solved > 0 else 0
+
+    tot_easy = BLIND_75_OVERALL["easy"]
+    tot_med = BLIND_75_OVERALL["medium"]
+    tot_hard = BLIND_75_OVERALL["hard"]
 
     # Node positions (Exact hierarchy from NeetCode Roadmap)
     # L1: Arrays & Hashing (Center: 390)
@@ -155,24 +141,24 @@ def render_roadmap_tree_card(node_data, diff_solved):
         "Linked List": {"x": 530, "y": 222, "w": 210, "h": 50},
     }
 
-    # Cable path generator: dynamically lights up green if target node is active/unlocked
+    # Cable path generator: lights up green if both source and target have solved problems
     def render_cable(d_path, src_name, tgt_name, w_val=2.0):
         src_s = node_data[src_name]["solved"]
         tgt_s = node_data[tgt_name]["solved"]
         if src_s > 0 and tgt_s > 0:
-            return f'''<path d="{d_path}" stroke="#00EA64" stroke-opacity="0.75" stroke-width="{w_val}">
-        <animate attributeName="stroke-opacity" values="0.5;0.95;0.5" dur="3s" repeatCount="indefinite"/>
+            return f'''<path d="{d_path}" stroke="#00EA64" stroke-opacity="0.85" stroke-width="{w_val}">
+        <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
       </path>'''
         elif src_s > 0:
-            return f'<path d="{d_path}" stroke="#00EA64" stroke-opacity="0.35" stroke-width="{w_val}" stroke-dasharray="4 2"/>'
+            return f'<path d="{d_path}" stroke="#334155" stroke-width="{w_val}" stroke-dasharray="4 3" opacity="0.45"/>'
         else:
             return f'<path d="{d_path}" stroke="#334155" stroke-width="{w_val}"/>'
 
-    c_arr_tp = render_cable("M 390 124 C 390 138, 240 134, 240 148", "Arrays & Hashing", "Two Pointers", 2.0)
-    c_arr_st = render_cable("M 390 124 C 390 138, 540 134, 540 148", "Arrays & Hashing", "Stack", 2.0)
+    c_arr_tp = render_cable("M 390 124 C 390 138, 240 134, 240 148", "Arrays & Hashing", "Two Pointers", 2.2)
+    c_arr_st = render_cable("M 390 124 C 390 138, 540 134, 540 148", "Arrays & Hashing", "Stack", 2.2)
     c_tp_bs = render_cable("M 240 198 C 240 212, 145 208, 145 222", "Two Pointers", "Binary Search", 1.8)
-    c_tp_sw = render_cable("M 240 198 C 240 212, 390 208, 390 222", "Two Pointers", "Sliding Window", 1.8)
-    c_tp_ll = render_cable("M 240 198 C 240 212, 635 208, 635 222", "Two Pointers", "Linked List", 1.8)
+    c_tp_sw = render_cable("M 240 198 C 240 212, 390 208, 390 222", "Two Pointers", "Sliding Window", 2.0)
+    c_tp_ll = render_cable("M 240 198 C 240 212, 635 208, 635 222", "Two Pointers", "Linked List", 2.0)
 
     cables_svg = f'''
     <!-- Connecting Cables -->
@@ -181,7 +167,7 @@ def render_roadmap_tree_card(node_data, diff_solved):
       {c_arr_tp}
       <!-- Arrays & Hashing -> Stack -->
       {c_arr_st}
-      <!-- Two Pointers -> Binary Search -->
+      <!-- Two Pointers -> Binary Search (Unlit) -->
       {c_tp_bs}
       <!-- Two Pointers -> Sliding Window -->
       {c_tp_sw}
@@ -209,9 +195,29 @@ def render_roadmap_tree_card(node_data, diff_solved):
         fill_w = int((solved / tot) * bar_w) if tot > 0 else 0
         clean_name = name.replace("&", "&amp;")
 
-        if solved > 0:
+        is_completed = (solved == tot and tot > 0)
+
+        if is_completed:
+            # Completed Node Style: Matches NeetCode's green node background
+            node_bg = "url(#completed-node-bg)"
+            border_stroke = "#00EA64"
+            border_opacity = "0.9"
+            border_width = "1.5"
+            bar_svg = f'''
+              <rect x="16" y="32" width="{bar_w}" height="5" rx="2.5" fill="rgba(0, 234, 100, 0.2)"/>
+              <rect x="16" y="32" width="{bar_w}" height="5" rx="2.5" fill="#00EA64">
+                <animate attributeName="opacity" values="0.85;1;0.85" dur="2s" repeatCount="indefinite"/>
+              </rect>
+              <circle cx="{16 + bar_w}" cy="34.5" r="2.2" fill="#FFFFFF"/>
+            '''
+            num_svg = f'<tspan fill="#00EA64" font-weight="700">{solved}/{tot}</tspan> <tspan fill="#00EA64" font-size="10">&#10003;</tspan>'
+            extra_filter = 'filter="url(#glow-completed)"'
+        elif solved > 0:
+            # In-progress Node Style
+            node_bg = "#1B2233"
             border_stroke = "#00EA64"
             border_opacity = "0.55"
+            border_width = "1.2"
             bar_svg = f'''
               <rect x="16" y="32" width="{bar_w}" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.08)"/>
               <rect x="16" y="32" width="{max(6, fill_w)}" height="5" rx="2.5" fill="#00EA64">
@@ -220,18 +226,21 @@ def render_roadmap_tree_card(node_data, diff_solved):
               <circle cx="{16 + max(6, fill_w)}" cy="34.5" r="2.2" fill="#FFFFFF"/>
             '''
             num_svg = f'<tspan fill="#00EA64" font-weight="700">{solved}</tspan><tspan fill="#64748B">/{tot}</tspan>'
-            node_bg = "#1B2233"
+            extra_filter = ''
         else:
+            # Unstarted Node Style
+            node_bg = "#161B28"
             border_stroke = "rgba(255, 255, 255, 0.12)"
             border_opacity = "0.2"
+            border_width = "1.2"
             bar_svg = f'<rect x="16" y="32" width="{bar_w}" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.08)"/>'
             num_svg = f'<tspan fill="#64748B">0/{tot}</tspan>'
-            node_bg = "#161B28"
+            extra_filter = ''
 
         nodes_svg.append(f'''
         <g transform="translate({x}, {y})">
           <!-- Node Background -->
-          <rect x="0" y="0" width="{w}" height="{h}" rx="10" fill="{node_bg}" stroke="{border_stroke}" stroke-opacity="{border_opacity}" stroke-width="1.2"/>
+          <rect x="0" y="0" width="{w}" height="{h}" rx="10" fill="{node_bg}" stroke="{border_stroke}" stroke-opacity="{border_opacity}" stroke-width="{border_width}" {extra_filter}/>
           <!-- Title -->
           <text x="16" y="21" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">
             {clean_name}
@@ -256,6 +265,12 @@ def render_roadmap_tree_card(node_data, diff_solved):
       <stop offset="100%" stop-color="#121826"/>
     </linearGradient>
 
+    <!-- Completed Node Background Gradient -->
+    <linearGradient id="completed-node-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D3324" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#164E38" stop-opacity="0.95"/>
+    </linearGradient>
+
     <!-- Border Gradient -->
     <linearGradient id="tree-border" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00EA64" stop-opacity="0.5"/>
@@ -270,9 +285,12 @@ def render_roadmap_tree_card(node_data, diff_solved):
       <stop offset="100%" stop-color="#A855F7"/>
     </linearGradient>
 
-    <!-- Glow Filter -->
+    <!-- Glow Filters -->
     <filter id="glow-tree" x="-50%" y="-50%" width="200%" height="200%">
       <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#00EA64" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glow-completed" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#00EA64" flood-opacity="0.45"/>
     </filter>
     <filter id="laser-glow" x="-100%" y="-100%" width="300%" height="300%">
       <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#00EA64" flood-opacity="0.9"/>
@@ -309,12 +327,12 @@ def render_roadmap_tree_card(node_data, diff_solved):
 
     <!-- Title -->
     <text x="20" y="12" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="700">
-      NeetCode Roadmap Tracker
+      NeetCode Blind 75 Tracker
     </text>
 
     <!-- Domain Pill -->
-    <g transform="translate(216, 0)">
-      <rect x="0" y="0" width="168" height="17" rx="8.5" fill="#00EA64" fill-opacity="0.08" stroke="#00EA64" stroke-opacity="0.25" stroke-width="0.8"/>
+    <g transform="translate(225, 0)">
+      <rect x="0" y="0" width="105" height="17" rx="8.5" fill="#00EA64" fill-opacity="0.08" stroke="#00EA64" stroke-opacity="0.25" stroke-width="0.8"/>
       <!-- Radar Pulse -->
       <circle cx="8" cy="8.5" r="2.5" fill="none" stroke="#00EA64" stroke-width="0.8">
         <animate attributeName="r" values="2.5;6.5" dur="2s" repeatCount="indefinite"/>
@@ -323,15 +341,15 @@ def render_roadmap_tree_card(node_data, diff_solved):
       <circle cx="8" cy="8.5" r="2.5" fill="#00EA64" filter="url(#glow-tree)">
         <animate attributeName="r" values="2.5;3.1;2.5" dur="2s" repeatCount="indefinite"/>
       </circle>
-      <text x="16" y="12" fill="#00EA64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.3px">
-        CORE DATA STRUCTURES
+      <text x="16" y="12" fill="#00EA64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.5px">
+        BLIND 75 TRACK
       </text>
     </g>
 
     <!-- Total Counter -->
     <g transform="translate({width - 48 - 145}, 0)">
       <text x="0" y="12" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5">
-        Solved: <tspan fill="#00EA64" font-weight="700" font-size="12">{total_solved} / {grand_total}</tspan> <tspan fill="#64748B">({pct}%)</tspan>
+        Solved: <tspan fill="#00EA64" font-weight="700" font-size="12">{overall_solved} / {overall_total}</tspan> <tspan fill="#64748B">({overall_pct}%)</tspan>
       </text>
     </g>
 
@@ -377,7 +395,7 @@ def render_roadmap_tree_card(node_data, diff_solved):
 
     <!-- Right Tag -->
     <text x="732" y="8" text-anchor="end" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600">
-      PHASE 1: CORE DATA STRUCTURES &#183; {total_solved}/{grand_total} SOLVED
+      CORE NODES &#183; {core_solved}/{core_total} SOLVED
     </text>
   </g>
 </svg>'''
@@ -396,13 +414,13 @@ def main():
 
     for out_dir in target_dirs:
         os.makedirs(out_dir, exist_ok=True)
-        for prefix in ["", "card_", "card_v1_", "card_v2_", "card_v3_", "card_v4_"]:
+        for prefix in ["", "card_", "card_v1_", "card_v2_", "card_v3_", "card_v4_", "card_v5_"]:
             file_path = os.path.join(out_dir, f"{prefix}neetcode.svg")
             with open(file_path, "w", encoding="utf-8") as f:
                 f.write(svg_code)
 
-    total_solved = sum(c["solved"] for c in node_data.values())
-    print(f"Generated 6-node NeetCode Roadmap Tree with {total_solved} solved problems ({diff_solved}) across all prefixes including card_v4_!")
+    core_solved = sum(c["solved"] for c in node_data.values())
+    print(f"Generated 6-node Blind 75 Roadmap Tree with {core_solved} solved problems ({diff_solved}) across all prefixes including card_v5_!")
 
 if __name__ == "__main__":
     main()
