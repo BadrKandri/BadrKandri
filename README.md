@@ -39,14 +39,6 @@ I am a 5th-year State Engineering student at **ENSA Berrechid** specializing in 
 </p>
 
 <p align="center">
-  <img src="assets/titles/title_v1_hackerrank.svg" width="780" alt="HackerRank Progress" />
-</p>
-
-<p align="center">
-  <img src="assets/hackerrank-dashboard.svg" alt="HackerRank Live Dashboard" width="600" />
-</p>
-
-<p align="center">
   <img src="assets/titles/title_v1_neetcode.svg" width="780" alt="NeetCode 150 Roadmap" />
 </p>
 
